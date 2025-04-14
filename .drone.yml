@@ -4,16 +4,16 @@ name: default
 type: kubernetes
 
 environment:
-  APP_NAME: csl
-  PROD_ENV: sas-csl-prod
-  STG_ENV: sas-csl-stg
-  UAT_ENV: sas-csl-uat
-  BRANCH_ENV: sas-csl-branch
-  PRODUCTION_URL: www.licensing-for-controlled-substances.homeoffice.gov.uk
+  APP_NAME: viptt
+  PROD_ENV: sas-viptt-prod
+  STG_ENV: sas-viptt-stg
+  UAT_ENV: sas-viptt-uat
+  BRANCH_ENV: sas-viptt-branch
+  PRODUCTION_URL: www.check-your-visa-processing-time.homeoffice.gov.uk
   IMAGE_URL: 340268328991.dkr.ecr.eu-west-2.amazonaws.com
-  IMAGE_REPO: sas/csl
-  GIT_REPO: UKHomeOffice/controlled-substance-licence
-  HOF_CONFIG: hof-services-config/Controlled_Substance_License
+  IMAGE_REPO: sas/viptt
+  GIT_REPO: UKHomeOffice/visa-processing-times-tool
+  HOF_CONFIG: hof-services-config/Visa_Processing_Times_Tool
   NON_PROD_AVAILABILITY: Mon-Fri 08:00-23:00 Europe/London
   READY_FOR_TEST_DELAY: 20s
   NOTIFY_STUB: stub
@@ -33,7 +33,7 @@ trigger:
 
 node_image: &node_image
   pull: if-not-exists
-  image: node:20.19.0-alpine3.21@sha256:37a5a350292926f98d48de9af160b0a3f7fcb141566117ee452742739500a5bd
+  image: quay.io/ukhomeofficedigital/hof-nodejs:20.19.0-alpine3.21@sha256:aad584fa26cb2838739527166c8965d95d0d2d9b88cfd5e3e2d3b8647ae03101
 
 linting: &linting
   <<: *node_image
@@ -79,7 +79,7 @@ steps:
         cpu: 1000
         memory: 1024Mi
     environment:
-      IMAGE_NAME: node:20.19.0-alpine3.21@sha256:37a5a350292926f98d48de9af160b0a3f7fcb141566117ee452742739500a5bd
+      IMAGE_NAME: quay.io/ukhomeofficedigital/hof-nodejs:20.19.0-alpine3.21@sha256:aad584fa26cb2838739527166c8965d95d0d2d9b88cfd5e3e2d3b8647ae03101
       SERVICE_URL: https://acp-trivy-helm.acp-trivy.svc.cluster.local:443
       SEVERITY: MEDIUM,HIGH,CRITICAL  --dependency-tree
       FAIL_ON_DETECTION: false
@@ -158,7 +158,7 @@ steps:
       secret_key:
         from_secret: aws_secret_access_key
       region: eu-west-2
-      repo: sas/csl
+      repo: sas/viptt
       registry: 340268328991.dkr.ecr.eu-west-2.amazonaws.com
       tags:
         - ${DRONE_COMMIT_SHA}
@@ -179,7 +179,7 @@ steps:
         cpu: 1000
         memory: 1024Mi
     environment:
-      IMAGE_NAME: sas/csl:${DRONE_COMMIT_SHA}
+      IMAGE_NAME: sas/viptt:${DRONE_COMMIT_SHA}
       SEVERITY: MEDIUM,HIGH,CRITICAL  --dependency-tree --format table
       FAIL_ON_DETECTION: false
       IGNORE_UNFIXED: false
@@ -390,7 +390,7 @@ steps:
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/trivy/client:latest
     pull: always
     environment:
-        IMAGE_NAME: sas/csl:${DRONE_COMMIT_SHA}
+        IMAGE_NAME: sas/viptt:${DRONE_COMMIT_SHA}
         SERVICE_URL: https://acp-trivy-helm.acp-trivy.svc.cluster.local:443
         SEVERITY: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL --dependency-tree
         FAIL_ON_DETECTION: true
@@ -409,7 +409,7 @@ steps:
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/trivy/client:latest
     pull: always
     environment:
-        IMAGE_NAME: node:20.19.0-alpine3.21@sha256:37a5a350292926f98d48de9af160b0a3f7fcb141566117ee452742739500a5bd
+        IMAGE_NAME: quay.io/ukhomeofficedigital/hof-nodejs:20.19.0-alpine3.21@sha256:aad584fa26cb2838739527166c8965d95d0d2d9b88cfd5e3e2d3b8647ae03101
         SEVERITY: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL --dependency-tree
         FAIL_ON_DETECTION: true
         IGNORE_UNFIXED: false
