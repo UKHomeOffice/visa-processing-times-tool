@@ -55,7 +55,6 @@ spec:
                 name: {{ .APP_NAME }}-configmap
                 {{ end }}
           env:
-            # because some internal services have self signed certs
             - name: TZ
               value: Europe/London
             - name: NODE_TLS_REJECT_UNAUTHORIZED
@@ -73,53 +72,13 @@ spec:
                 secretKeyRef:
                   name: session-secret
                   key: session-secret
-            # - name: NOTIFY_KEY
-            #   valueFrom:
-            #     secretKeyRef:
-            #       name: notify-key
-            #       key: notify-key
+            - name: NOTIFY_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: notify-key
+                  key: notify-key
             - name: USE_MOCKS
               value: "false"
-            - name: PDF_CONVERTER_URL
-              {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-              value: https://html-pdf-converter-{{ .DRONE_SOURCE_BRANCH }}:10443/convert
-              {{ else }}
-              value: https://html-pdf-converter:10443/convert
-              {{ end }}
-            - name: FILE_VAULT_URL
-              {{ if eq .KUBE_NAMESPACE .PROD_ENV }}
-              value: https://fv-{{ .APP_NAME }}.sas.homeoffice.gov.uk/file
-              {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
-              value: https://fv-{{ .APP_NAME }}.stg.sas.homeoffice.gov.uk/file
-              {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-              value: https://fv-{{ .APP_NAME }}.uat.sas-notprod.homeoffice.gov.uk/file
-              {{ else if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-              value: https://fv-{{ .DRONE_SOURCE_BRANCH }}.branch.sas-notprod.homeoffice.gov.uk/file
-              {{ end }}
-            - name: FILE_VAULT_CLIENT_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: file-vault-client
-                  key: secret
-            - name: FILE_VAULT_CLIENT_ID
-              valueFrom:
-                secretKeyRef:
-                  name: file-vault-client
-                  key: id
-            - name: FILE_VAULT_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: file-vault-user
-                  key: username
-            - name: FILE_VAULT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: file-vault-user
-                  key: password
-            {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
-            - name: DATASERVICE_SERVICE_HOST
-              value: dataservice-{{ .DRONE_SOURCE_BRANCH }}
-            {{ end }}
           {{ if not (eq .KUBE_NAMESPACE .BRANCH_ENV) }}
           livenessProbe:
             httpGet:
@@ -136,11 +95,11 @@ spec:
           {{ end }}
           resources:
             requests:
-              memory: 256Mi
-              cpu: 100m
+              cpu: "20m"
+              memory: "100Mi"
             limits:
-              cpu: 250m
-              memory: 512Mi
+              cpu: "100m"
+              memory: "200Mi"
           volumeMounts:
             - mountPath: /public
               name: public
@@ -150,22 +109,20 @@ spec:
           image: quay.io/ukhomeofficedigital/nginx-proxy-govuk@sha256:4470064d0b1d20ae08c5fd85551576cb687f342a22d6cb456fda9b2c4ce8c8df
           resources:
             requests:
-              memory: 20Mi
-              cpu: 20m
+              memory: 10Mi
+              cpu: 10m
             limits:
+              cpu: 250m
               memory: 256Mi
-              cpu: 300m
           env:
 {{ file .NGINX_SETTINGS | indent 12 }}
           ports:
-            - containerPort: 10080
             - containerPort: 10443
           volumeMounts:
             - mountPath: /public
               name: public
           securityContext:
             runAsNonRoot: true
-
       volumes:
         - name: public
           emptyDir: {}
