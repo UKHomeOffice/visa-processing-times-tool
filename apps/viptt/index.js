@@ -4,7 +4,7 @@ const summary = hof.components.summary;
 module.exports = {
   name: 'VIPTT',
   fields: 'apps/viptt/fields',
-  views: 'apps/viptt/views',
+  // views: 'apps/viptt/views', // Uncomment if you have custom views
   translations: 'apps/viptt/translations',
   baseUrl: '/',
   steps: {
