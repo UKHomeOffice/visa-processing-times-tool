@@ -19,47 +19,47 @@ const mapSections = obj => {
 const getUrl = function (app, url, expectedStatus) {
   return new Promise((resolve, reject) => {
     app
-        .get(url)
-        .expect(expectedStatus)
-        .end((err, response) => err ? reject(err) : resolve(response));
+      .get(url)
+      .expect(expectedStatus)
+      .end((err, response) => err ? reject(err) : resolve(response));
   });
-}
+};
 
 const postUrl = function (app, url, data, expectedStatus, token) {
   return new Promise((resolve, reject) => {
     app
-        .post(url)
-        .send(Object.assign(data, {
-          'x-csrf-token': token
-        }))
-        .expect(expectedStatus)
-        .end((err, response) => err ? reject(err) : resolve(response));
+      .post(url)
+      .send(Object.assign(data, {
+        'x-csrf-token': token
+      }))
+      .expect(expectedStatus)
+      .end((err, response) => err ? reject(err) : resolve(response));
   });
-}
+};
 
 const parseHtml = function (response) {
   const dom = new JSDOM(response.text);
   $ = jquery(dom.window);
   return Promise.resolve($(dom.window.document));
-}
+};
 
 
 const getDom = function (response) {
   const dom = new JSDOM(response.text);
   return Promise.resolve(dom.window.document);
-}
+};
 
 const getToken = function (response) {
   return parseHtml(response)
-      .then(win => win.find('[name=x-csrf-token]').val());
-}
+    .then(win => win.find('[name=x-csrf-token]').val());
+};
 
 const passStep = function (app, url, data) {
   return getUrl(app, url, 200)
-      .then(getToken)
-      .then(postUrl.bind(null, app, url, data, 302))
-      .catch(error => Promise.reject(`Error passing step: ${url}. ${error}`));
-}
+    .then(getToken)
+    .then(postUrl.bind(null, app, url, data, 302))
+    .catch(error => Promise.reject(`Error passing step: ${url}. ${error}`));
+};
 
 const parse302 = function (previousResponse) {
   const url = previousResponse && previousResponse.text ? previousResponse.text.match(/\/(.*?)$/)[0] : null;
@@ -67,19 +67,19 @@ const parse302 = function (previousResponse) {
     throw new Error('getRedirection or passRedirectionStep cannot find an url in the response');
   }
   return url;
-}
+};
 
 const passRedirectionStep = function (app, data, previousResponse) {
   const url = parse302(previousResponse);
   return getUrl(app, url, 200)
-      .then(getToken)
-      .then(postUrl.bind(null, app, url, data, 302))
-      .catch(error => Promise.reject(`Error passing step: ${url}. ${error}`));
-}
+    .then(getToken)
+    .then(postUrl.bind(null, app, url, data, 302))
+    .catch(error => Promise.reject(`Error passing step: ${url}. ${error}`));
+};
 
 const getRedirection = function (app, expectedStatus, previousResponse) {
   return getUrl(app, parse302(previousResponse), expectedStatus);
-}
+};
 
 module.exports = {
   containsAll,
