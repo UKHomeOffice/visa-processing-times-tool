@@ -1,0 +1,16 @@
+{
+  "appName": "Visa Processing Times Tool",
+  "theme": "govUK",
+  "behaviours": [
+    "hof/components/clear-session"
+  ],
+  "translations": "./apps/viptt/translations",
+  "routes": [
+    "./apps/viptt"
+  ],
+  "session": {
+    "name": "viptt.hof.sid"
+  },
+  "getAccessibility": true,
+  "emailerFallback": true
+}
