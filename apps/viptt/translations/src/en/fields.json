@@ -1,0 +1,13 @@
+{
+  "were-you-in-uk": {
+    "legend": "Were you in the UK when you applied for your visa?",
+    "options": {
+      "yes": {
+        "label" : "Yes"
+      },
+      "no": {
+        "label" : "No"
+      }
+    }
+  }
+}
