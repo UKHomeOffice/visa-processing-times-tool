@@ -13,7 +13,7 @@
     "postinstall": "hof-build",
     "test": "NODE_ENV=test yarn run test:lint && yarn run test:unit",
     "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
-    "test:unit": "jest --verbose --testPathPattern=test/unit"
+    "test:unit": "jest --verbose --testPathPattern=test/unit --passWithNoTests"
   },
   "repository": {
     "type": "git",
