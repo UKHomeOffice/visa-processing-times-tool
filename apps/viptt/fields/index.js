@@ -13,8 +13,11 @@ module.exports = {
     isPageHeading: true,
     validate: ['required'],
     options: [
-      'visa-type',
-      'work',
+      'study-exam-or-school-exchange',
+      'visit-as-tourist-or-see-family',
+      'work-or-business-related-meetings',
+      'lecture-research-or-academic-placement',
+      'bno-with-connections-to-hk',
       'something-else'
     ]
   },

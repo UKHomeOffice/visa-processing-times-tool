@@ -32,17 +32,10 @@ module.exports = {
       fields: ['why-did-you-apply-inside'],
       forks: [
         {
-          target: '/biometrics',
-          condition: {
-            field: 'why-did-you-apply-inside',
-            value: 'visa-type'
-          }
-        },
-        {
           target: '/work-visa-types-inside-uk',
           condition: {
             field: 'why-did-you-apply-inside',
-            value: 'work'
+            value: 'work-or-business-related-meetings'
           }
         },
         {
