@@ -1,5 +1,8 @@
 {
   "were-you-in-uk": {
     "required": "Select yes or no"
+  },
+  "why-did-you-apply-inside": {
+    "required": "Select the reason you applied for a visa"
   }
 }
