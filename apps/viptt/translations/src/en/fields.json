@@ -32,5 +32,37 @@
         "label" : "Something else"
       }
     }
+  },
+  "why-did-you-apply-outside": {
+    "legend": "Why did you apply for a visa?",
+    "options": {
+      "study-exam-or-school-exchange": {
+        "label" : "To study, take an exam or join a school exchange programme"
+      },
+      "visit-as-tourist-or-see-family": {
+        "label" : "To visit as a tourist or see family and friends"
+      },
+      "work-or-business-related-meetings": {
+        "label" : "For work or to attend business-related meetings, events or appointments"
+      },
+      "lecture-research-or-academic-placement": {
+        "label" : "To lecture, conduct research, or do an academic or clinical placement"
+      },
+      "get-married-or-civil-partnership": {
+        "label" : "To get married or enter into a civil partnership while visiting the UK"
+      },
+      "have-medical-treatment": {
+        "label" : "To have medical treatment"
+      },
+      "bno-with-connections-to-hk": {
+        "label" : "I'm a British National Overseas (BNO) with connections to Hong Kong"
+      },
+      "travel-through-uk-to-another-country": {
+        "label" : "To travel through ('transit') on the way to another country"
+      },
+      "something-else": {
+        "label" : "Something else"
+      }
+    }
   }
 }
