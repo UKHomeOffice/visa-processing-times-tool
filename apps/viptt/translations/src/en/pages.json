@@ -14,5 +14,10 @@
     "content-whats-next": "What happens next",
     "content-respond-1": "This is a test paragraph",
     "content-feedback-link-text": "What do you think of this service?"
+  },
+  "work-visa-types-inside-uk": {
+    "header": "Did you apply for a Health and Care Worker visa?",
+    "paragraph": "A <a class='govuk-link' href='https://www.gov.uk/get-access-evisa'>Health and Care Worker</a> visa allows medical professionals to do an eligible job with the NHS, an NHS supplier or in adult social care."
   }
+    
 }
