@@ -52,13 +52,6 @@ module.exports = {
       fields: ['why-did-you-apply-outside'],
       forks: [
         {
-          target: '/biometrics',
-          condition: {
-            field: 'why-did-you-apply-outside',
-            value: 'visa-type'
-          }
-        },
-        {
           target: '/out-of-scope',
           condition: {
             field: 'why-did-you-apply-outside',

@@ -26,7 +26,14 @@ module.exports = {
     isPageHeading: true,
     validate: ['required'],
     options: [
-      'visa-type',
+      'study-exam-or-school-exchange',
+      'visit-as-tourist-or-see-family',
+      'work-or-business-related-meetings',
+      'lecture-research-or-academic-placement',
+      'get-married-or-civil-partnership',
+      'have-medical-treatment',
+      'bno-with-connections-to-hk',
+      'travel-through-uk-to-another-country',
       'something-else'
     ]
   },
