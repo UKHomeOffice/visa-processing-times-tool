@@ -10,10 +10,5 @@
   },
   "why-did-you-apply-outside": {
     "required": "Select the reason you applied for a visa"
-  },
-  "identity-verification-date": {
-    "required": "Enter the date you provided your biometrics",
-    "date": "You must enter a real date",
-    "before": "The date cannot be in the future"
   }
 }
