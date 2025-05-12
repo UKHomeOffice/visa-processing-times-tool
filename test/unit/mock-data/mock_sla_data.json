@@ -1,0 +1,64 @@
+{
+  "default": {
+    "inside-uk": {
+      "study-exam-or-school-exchange": {
+        "weeks": "8",
+        "days": "40"
+      },
+      "visit-as-tourist-or-see-family": {
+        "weeks": "8",
+        "days": "40"
+      },
+      "work-or-business-related-meetings": {
+        "weeks": "8",
+        "days": "40"
+      },
+      "work-visa-health-and-care": {
+        "weeks": "3",
+        "days": "15"
+      },
+      "lecture-research-or-academic-placement": {
+        "weeks": "8",
+        "days": "40"
+      },
+      "bno-with-connections-to-hk": {
+        "weeks": "12",
+        "days": "60"
+      }
+    },
+    "outside-uk": {
+      "study-exam-or-school-exchange": {
+        "weeks": "3",
+        "days": "15"
+      },
+      "visit-as-tourist-or-see-family": {
+        "weeks": "3",
+        "days": "15"
+      },
+      "work-or-business-related-meetings": {
+        "weeks": "3",
+        "days": "15"
+      },
+      "lecture-research-or-academic-placement": {
+        "weeks": "3",
+        "days": "15"
+      },
+      "get-married-or-civil-partnership": {
+        "weeks": "3",
+        "days": "15"
+      },
+      "have-medical-treatment": {
+        "weeks": "3",
+        "days": "15"
+      },
+      "travel-through-uk-to-another-country": {
+        "weeks": "3",
+        "days": "15"
+      },
+      "bno-with-connections-to-hk": {
+        "weeks": "12",
+        "days": "60"
+      }
+    }
+  }
+}
