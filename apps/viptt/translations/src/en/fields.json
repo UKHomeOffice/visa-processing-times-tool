@@ -33,6 +33,17 @@
       }
     }
   },
+  "health-care-worker-visa": {
+    "legend": "Did you apply for a Health and Care Worker visa?",
+    "options": {
+      "yes": {
+        "label": "Yes"
+      },
+      "no": {
+        "label": "No"
+      }
+    }
+  },
   "why-did-you-apply-outside": {
     "legend": "Why did you apply for a visa?",
     "options": {

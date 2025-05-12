@@ -5,6 +5,9 @@
   "why-did-you-apply-inside": {
     "required": "Select the reason you applied for a visa"
   },
+  "health-care-worker-visa": {
+    "required": "Select yes or no"
+  },
   "why-did-you-apply-outside": {
     "required": "Select the reason you applied for a visa"
   }

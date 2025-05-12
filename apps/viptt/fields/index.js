@@ -39,7 +39,9 @@ module.exports = {
   },
   'health-care-worker-visa': {
     mixin: 'radio-group',
-    isPageHeading: true,
+    legend: {
+      className: 'visuallyhidden'
+    },
     validate: ['required'],
     options: [
       'yes',
