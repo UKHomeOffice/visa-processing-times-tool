@@ -1,5 +1,6 @@
 const hof = require('hof');
 const summary = hof.components.summary;
+const checkSlaRedirect = require('./behaviours/check-sla-redirect');
 
 module.exports = {
   name: 'VIPTT',
@@ -68,30 +69,17 @@ module.exports = {
     '/out-of-scope': {
     },
     '/biometrics': {
-      fields: ['temporary-field'],
-      forks: [
-        {
-          target: '/outcome-inside',
-          condition: {
-            field: 'temporary-field',
-            value: 'yes'
-          }
-        },
-        {
-          target: '/outcome-outside',
-          condition: {
-            field: 'temporary-field',
-            value: 'no'
-          }
-        }
-      ],
-      next: '/outcome-inside'
+      fields: ['identity-verification-date'],
+      behaviours: [checkSlaRedirect],
+      next: '/outcome-outside'
     },
     '/outcome-inside': {
       behaviours: ['complete', summary]
     },
     '/outcome-outside': {
       behaviours: ['complete', summary]
-    }
+    },
+    '/session-timeout': {},
+    '/exit': {}
   }
 };
