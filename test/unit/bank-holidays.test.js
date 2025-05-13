@@ -7,7 +7,7 @@ const Model = require('hof/model');
 jest.mock('hof/model');
 
 const fs = require('fs/promises');
-jest.mock("fs/promises");
+jest.mock('fs/promises');
 
 describe('BankHolidays', () => {
   let bankHolidays;
@@ -16,7 +16,7 @@ describe('BankHolidays', () => {
   beforeEach(() => {
     bankHolidays = new BankHolidays();
     // Override the _bankHolidayData property with mock data
-    bankHolidays._bankHolidayData = mockBankHolidaysData['england-and-wales']['events'];
+    bankHolidays._bankHolidayData = mockBankHolidaysData['england-and-wales'].events;
   });
 
   describe('isBankHoliday', () => {
