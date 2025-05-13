@@ -3,10 +3,8 @@
 const _ = require('lodash');
 const Model = require('hof').model;
 const fs = require('fs/promises');
-const moment = require('moment');
 const config = require('../../../config');
 const inputDateFormat = config.inputDateFormat;
-const displayDateFormat = config.displayDateFormat;
 const bankHolidaysApi = config.bankHolidaysApi;
 
 const BH_FILE_PATH = '/../data/bank_hols_data.json';
