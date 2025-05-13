@@ -2,6 +2,13 @@ const moment = require('moment');
 const BankHolidays = require('../../apps/viptt/models/bank-holidays');
 const bankHols = require('./mock-data/mock_bank_hols_data');
 
+// Mock the required modules
+const Model = require('hof/model');
+jest.mock('hof/model');
+
+const fs = require('fs/promises');
+jest.mock("fs/promises");
+
 describe('BankHolidays', () => {
   let bankHolidays;
   const mockBankHolidaysData = JSON.parse(JSON.stringify(bankHols));
@@ -9,7 +16,7 @@ describe('BankHolidays', () => {
   beforeEach(() => {
     bankHolidays = new BankHolidays();
     // Override the _bankHolidayData property with mock data
-    bankHolidays._bankHolidayData = mockBankHolidaysData;
+    bankHolidays._bankHolidayData = mockBankHolidaysData['england-and-wales']['events'];
   });
 
   describe('isBankHoliday', () => {
@@ -56,6 +63,32 @@ describe('BankHolidays', () => {
     test('isWorkingDay returns false if date is on a weekend', () => {
       const testDate = moment('2025-05-10');
       expect(bankHolidays.isWorkingDay(testDate)).toBe(false);
+    });
+  });
+
+  describe('saveBankHolidays', () => {
+    beforeEach(() => {
+      Model.mockImplementation(() => {
+        return {
+          fetch: jest.fn().mockResolvedValue(mockBankHolidaysData)
+        };
+      });
+    });
+
+    test('saveBankHolidays attempts to write json file', async () => {
+      await bankHolidays.saveBankHolidays();
+      expect(fs.writeFile).toHaveBeenCalled();
+    });
+  });
+
+  describe('loadBankHolidays', () => {
+    beforeEach(() => {
+      fs.readFile.mockResolvedValue(JSON.stringify(mockBankHolidaysData));
+    });
+
+    test('loadBankHolidays attempts to read json file', async () => {
+      await bankHolidays.loadBankHolidays();
+      expect(fs.readFile).toHaveBeenCalled();
     });
   });
 });

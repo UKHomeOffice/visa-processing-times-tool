@@ -15,7 +15,7 @@ describe('SlaCalculator', () => {
     bankHolidays = new BankHolidays();
 
     // Override the _bankHolidayData property with mock data
-    bankHolidays._bankHolidayData = mockBankHolidaysData;
+    bankHolidays._bankHolidayData = mockBankHolidaysData['england-and-wales']['events'];
 
     // Sla calculator that we will test
     slaCalculator = new SlaCalculator(bankHolidays);

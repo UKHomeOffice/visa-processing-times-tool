@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 const Model = require('hof').model;
-const fs = require('fs').promises;
+const fs = require('fs/promises');
 const moment = require('moment');
 const config = require('../../../config');
 const inputDateFormat = config.inputDateFormat;
@@ -24,27 +24,6 @@ module.exports = class BankHolidays {
     // Can use bank holiday data from England and Wales, Scotland and Northern Ireland
     // However the requirements are for us to only use England and Wales bank hols for now
     this._country = country || DEFAULT_COUNTRY;
-  }
-
-  /**
-   * Return a date formatted according to the display date format
-   * @param {string} date
-   * @returns {moment}
-   */
-  formattedDate(date) {
-    return moment(date, inputDateFormat).format(displayDateFormat);
-  }
-
-  /**
-   * Update the bank holiday data with formatted dates
-   * We can use these to display the dates in a more user-friendly format
-   * @param {Object} data
-   */
-  addFormattedDates(data) {
-    Object.entries(data).forEach(val => _.map(data[val[0]].events, day => {
-      day.formattedDate = this.formattedDate(day.date);
-      return day;
-    }));
   }
 
   /**
@@ -108,7 +87,6 @@ module.exports = class BankHolidays {
       if (!this.checkDataIsValid(data)) {
         return Promise.reject(new Error('Failed to retrieve data from Bank Holidays API'));
       }
-      this.addFormattedDates(data);
 
       const fileName = `${__dirname}${BH_FILE_PATH}`;
       return await fs.writeFile(fileName, JSON.stringify(data, null, 2), { flag: 'w+' });
