@@ -18,6 +18,18 @@
   "work-visa-types-inside-uk": {
     "header": "Did you apply for a Health and Care Worker visa?",
     "paragraph": "A <a class='govuk-link' href='https://www.gov.uk/get-access-evisa'>Health and Care Worker</a> visa allows medical professionals to do an eligible job with the NHS, an NHS supplier or in adult social care."
+  },
+  "out-of-scope": {
+    "header": "Family visas and applications to settle in the UK",
+    "intro": "This tool cannot provide information on visas and applications: ",
+    "intro-p1": "for your dependants",
+    "intro-p2": "to settle in the UK",
+    "intro-p3": "to join your partner or spouse",
+    "intro-p4": "to join family for a long stay",
+    "intro-p5": "to be cared for by family in the UK",
+    "intro-p6": "to stay under the Homes for Ukraine scheme",
+    "intro-p7": "to stay under a family reunion scheme",
+    "paragraph": "If you applied for one of these, please <a class='govuk-link' href='https://www.gov.uk/government/collections/visa-processing-times'>check standard visa processing times."
+
   }
-    
 }
