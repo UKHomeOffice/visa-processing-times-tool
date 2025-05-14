@@ -1,6 +1,18 @@
 {{<layout}}
+  {{$journeyHeader}}
+  {{#t}}journey.header{{/t}}
+  {{/journeyHeader}}
+
+  {{$propositionHeader}}
+  {{> partials-navigation}}
+  {{/propositionHeader}}
+
+  {{$header}}
+  {{header}}
+  {{/header}}
+
   {{$content}}
-  <p>{{#t}}pages.out-of-scope.intro{{/t}}</p>
+  <p>{{intro}}</p>
 
     <ul>
         <li>{{#t}}pages.out-of-scope.intro-p1{{/t}}</li>
