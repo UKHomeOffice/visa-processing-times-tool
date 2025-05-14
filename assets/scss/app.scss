@@ -298,3 +298,16 @@ pre.looped-records {
   word-wrap: break-word;
   word-break: break-all;
 }
+
+p {
+  @extend .govuk-body;
+}
+
+ul {
+  @extend .govuk-list;
+  @extend .govuk-list--bullet;
+}
+
+a {
+  @extend .govuk-link;
+}
