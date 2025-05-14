@@ -1,6 +1,6 @@
-{{<partials-page}}
-  {{$page-content}}
-  <p class="govuk-body">{{#t}}pages.out-of-scope.paragraph{{/t}}</p>
+{{<layout}}
+  {{$content}}
+  <p class="govuk-body">{{#t}}pages.out-of-scope.intro{{/t}}</p>
 
     <ul class="govuk-list govuk-list--bullet">
         <li>{{#t}}pages.out-of-scope.intro-p1{{/t}}</li>
@@ -13,5 +13,5 @@
     </ul>
   <p class="govuk-body">{{#t}}pages.out-of-scope.paragraph{{/t}}</p>
   
-  {{/page-content}}
-{{/partials-page}}
+  {{/content}}
+{{/layout}}
