@@ -19,9 +19,9 @@
     "header": "Did you apply for a Health and Care Worker visa?",
     "paragraph": "A <a href='https://www.gov.uk/get-access-evisa'>Health and Care Worker</a> visa allows medical professionals to do an eligible job with the NHS, an NHS supplier or in adult social care."
   },
-  "out-of-scope": {
-    "header": "Family visas and applications to settle in the UK",
-    "intro": "This tool cannot provide information on visas and applications: ",
+  "test": {
+    "header": "test header",
+    "intro": "",
     "intro-p1": "for your dependants",
     "intro-p2": "to settle in the UK",
     "intro-p3": "to join your partner or spouse",

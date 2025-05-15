@@ -1,17 +1,26 @@
-{{<layout}}
-  {{$content}}
-  <p>{{#t}}pages.out-of-scope.intro{{/t}}</p>
-
+{{<partials-page}}
+  {{$page-content}}
+  <p>{{#t}}pages.test.intro{{/t}}</p>
+hi mom1
+  <div>
+  <p>hi mom</p>
     <ul>
-        <li>{{#t}}pages.out-of-scope.intro-p1{{/t}}</li>
-        <li>{{#t}}pages.out-of-scope.intro-p2{{/t}}</li>
-        <li>{{#t}}pages.out-of-scope.intro-p3{{/t}}</li>
-        <li>{{#t}}pages.out-of-scope.intro-p4{{/t}}</li>
-        <li>{{#t}}pages.out-of-scope.intro-p5{{/t}}</li>
-        <li>{{#t}}pages.out-of-scope.intro-p6{{/t}}</li>
-        <li>{{#t}}pages.out-of-scope.intro-p7{{/t}}</li>
+      text inside "ul"
+        <li>{{#t}}pages.test.intro-p1{{/t}}</li>
+        text between LIs
+        <li>{{#t}}pages.test.intro-p2{{/t}}</li>
+        <li>{{#t}}pages.test.intro-p3{{/t}}</li>
+        <li>{{#t}}pages.test.intro-p4{{/t}}</li>
+        <li>{{#t}}pages.test.intro-p5{{/t}}</li>
+        <li>{{#t}}pages.test.intro-p6{{/t}}</li>
+        <li>{{#t}}pages.test.intro-p7{{/t}}</li>
+        <li>{{#markdown}}pages.test.intro-p7{{/markdown}}</li>
     </ul>
-  <p>{{#t}}pages.out-of-scope.paragraph{{/t}}</p>
-  
-  {{/content}}
-{{/layout}}
+    </div>
+text after UL
+<div>
+  <p>{{#t}}pages.test.paragraph{{/t}}</p>
+text after paragraph 
+</div>
+  {{/page-content}}
+{{/partials-page}}
