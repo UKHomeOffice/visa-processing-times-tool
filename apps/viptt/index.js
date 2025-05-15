@@ -5,7 +5,7 @@ const checkSlaRedirect = require('./behaviours/check-sla-redirect');
 module.exports = {
   name: 'VIPTT',
   fields: 'apps/viptt/fields',
-  // views: 'apps/viptt/views', // Uncomment if you have custom views
+  views: 'apps/viptt/views',
   translations: 'apps/viptt/translations',
   baseUrl: '/',
   steps: {
