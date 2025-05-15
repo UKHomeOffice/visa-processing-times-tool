@@ -4,6 +4,11 @@
   "behaviours": [
     "hof/components/clear-session"
   ],
+  "build": {
+    "watch": {
+      "ignore": ["apps/viptt/data"]
+    }
+  },
   "translations": "./apps/viptt/translations",
   "routes": [
     "./apps/viptt"

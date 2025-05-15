@@ -1,3 +1,5 @@
+const dateComponent = require('hof').components.date;
+
 module.exports = {
   'were-you-in-uk': {
     mixin: 'radio-group',
@@ -48,13 +50,9 @@ module.exports = {
       'no'
     ]
   },
-  'temporary-field': {
-    mixin: 'radio-group',
+  'identity-verification-date': dateComponent('identity-verification-date', {
+    mixin: 'input-date',
     isPageHeading: true,
-    validate: ['required'],
-    options: [
-      'yes',
-      'no'
-    ]
-  }
+    validate: ['required', 'before']
+  })
 };
