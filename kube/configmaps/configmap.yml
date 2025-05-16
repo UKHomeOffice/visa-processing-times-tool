@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
+  DISALLOW_INDEXING: "true"
   name: {{ .APP_NAME }}-configmap-{{ .DRONE_SOURCE_BRANCH }}
   {{ else }}
   name: {{ .APP_NAME }}-configmap
@@ -10,6 +11,7 @@ metadata:
   namespace: {{ .KUBE_NAMESPACE }}
   labels:
     {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
+    DISALLOW_INDEXING: "true"
     name: {{ .APP_NAME }}-{{ .DRONE_SOURCE_BRANCH }}
     {{ else }}
     name: {{ .APP_NAME }}

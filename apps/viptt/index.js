@@ -1,6 +1,12 @@
 const hof = require('hof');
 const summary = hof.components.summary;
 const checkSlaRedirect = require('./behaviours/check-sla-redirect');
+const { disallowIndexing } = require('../../config');
+
+const pages = {};
+if (disallowIndexing) {
+  pages['/robots.txt'] = 'static/robots';
+}
 
 module.exports = {
   name: 'VIPTT',
@@ -8,6 +14,7 @@ module.exports = {
   // views: 'apps/viptt/views', // Uncomment if you have custom views
   translations: 'apps/viptt/translations',
   baseUrl: '/',
+  pages: pages,
   steps: {
     '/location': {
       fields: ['were-you-in-uk'],

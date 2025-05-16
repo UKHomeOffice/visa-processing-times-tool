@@ -74,6 +74,9 @@ spec:
                   key: session-secret
             - name: USE_MOCKS
               value: "false"
+              # Preventing search engines from indexing all pages
+            - name: DEINDEX_FORM
+              value: "true"
           {{ if not (eq .KUBE_NAMESPACE .BRANCH_ENV) }}
           livenessProbe:
             httpGet:
