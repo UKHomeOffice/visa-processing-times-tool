@@ -1,6 +1,8 @@
+const moment = require('moment');
 const SlaCalculator = require('../models/sla-calculator');
 const BankHolidays = require('../models/bank-holidays');
 const ServiceAgreements = require('../models/service-agreements');
+const { displayDateFormat, inputDateFormat } = require('../../../config');
 /**
  * Check if the user's expected visa reply date is within SLA
  * and redirect to correct page if this is true.
@@ -15,7 +17,7 @@ module.exports = superclass =>
       // SLA model
       this._serviceAgreements = new ServiceAgreements();
 
-      // Sla calculation helper
+      // SLA calculation helper
       this._slaCalculator = new SlaCalculator(this._bankHolidays);
 
       // Get the user's reason for applying depending on
@@ -36,6 +38,12 @@ module.exports = superclass =>
         verificationDate,
         slaData.days
       );
+
+      // Add values that are needed to display in the outcome page
+      const formattedInputDate = moment(verificationDate, inputDateFormat).format(displayDateFormat);
+      req.sessionModel.set('application-start-date', formattedInputDate);
+      req.sessionModel.set('estimated-reply-date', estimatedReplyDate.format(displayDateFormat));
+      req.sessionModel.set('sla-weeks', slaData.weeks);
 
       // Check if reply is still within the SLA timeline
       const insideSLA = this._slaCalculator.isWithinEstimate(estimatedReplyDate);

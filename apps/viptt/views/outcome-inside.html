@@ -1,0 +1,41 @@
+{{<partials-page}}
+  {{$page-content}}
+  <div class="govuk-panel govuk-panel--confirmation">
+    <h1 class="govuk-panel__title">
+      {{#t}}pages.outcome-inside.expected-reply{{/t}}
+    </h1>
+  </div>
+  <p>{{#t}}pages.outcome-inside.explanation{{/t}}</p>
+
+  <h2 class="govuk-heading-m">{{#t}}pages.outcome-inside.heading-1{{/t}}</h2>
+  <p>{{#t}}pages.outcome-inside.paragraph-1{{/t}}</p>
+
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">{{#t}}pages.outcome-inside.warning{{/t}}</span>
+      {{#t}}pages.outcome-inside.warning-paragraph-1{{/t}}
+      <br>
+      {{#t}}pages.outcome-inside.warning-paragraph-2{{/t}}
+    </strong>
+  </div>
+
+  <p>{{#t}}pages.outcome-inside.paragraph-2{{/t}}</p>
+  <h2 class="govuk-heading-m">{{#t}}pages.outcome-inside.heading-2{{/t}}</h2>
+  <p>{{#t}}pages.outcome-inside.paragraph-3{{/t}}</p>
+  <p>{{#t}}pages.outcome-inside.paragraph-4{{/t}}</p>
+  <ul>
+    <li>{{#t}}pages.outcome-inside.bullet-1{{/t}}</li>
+    <li>{{#t}}pages.outcome-inside.bullet-2{{/t}}</li>
+    <li>{{#t}}pages.outcome-inside.bullet-3{{/t}}</li>
+  </ul>
+  <p>{{#t}}pages.outcome-inside.paragraph-5{{/t}}</p>
+  <p>{{#t}}pages.outcome-inside.paragraph-6{{/t}}</p>
+  <div class="govuk-inset-text">
+    <p>
+      {{#t}}pages.outcome-inside.paragraph-7{{/t}}
+      <a href="{{#t}}pages.outcome-inside.link{{/t}}" rel="noreferrer noopener" target="_blank">{{#t}}pages.outcome-inside.link-text{{/t}}</a>.
+    </p>
+  </div>
+  {{/page-content}}
+{{/partials-page}}

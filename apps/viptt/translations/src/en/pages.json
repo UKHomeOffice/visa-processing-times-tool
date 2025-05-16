@@ -1,20 +1,4 @@
 {
-  "confirm": {
-    "header": "Check your answers",
-    "submit-warning": "Once you have submitted your application, you will not be able to adjust it. Please check it is correct.",
-    "sections": {
-      "name": {
-        "header": "Personal Details"
-      }
-    }
-  },
-  "complete": {
-    "header": "You submission have been sent",
-    "content-copy-sent": "We have sent you a confirmation email",
-    "content-whats-next": "What happens next",
-    "content-respond-1": "This is a test paragraph",
-    "content-feedback-link-text": "What do you think of this service?"
-  },
   "work-visa-types-inside-uk": {
     "header": "Did you apply for a Health and Care Worker visa?",
     "paragraph": "A <a href='https://www.gov.uk/get-access-evisa'>Health and Care Worker</a> visa allows medical professionals to do an eligible job with the NHS, an NHS supplier or in adult social care."
@@ -30,5 +14,26 @@
     "intro-p6": "to stay under the Homes for Ukraine scheme",
     "intro-p7": "to stay under a family reunion scheme",
     "paragraph": "If you applied for one of these, please <a href='https://www.gov.uk/government/collections/visa-processing-times'>check standard visa processing times.</a>"
+  },
+  "outcome-inside": {
+    "expected-reply": "You can expect a reply by {{values.estimated-reply-date}}",
+    "explanation": "This date is based on the standard processing time of {{values.sla-weeks}} weeks from {{values.application-start-date}}.",
+    "heading-1": "More information",
+    "paragraph-1": "We are currently processing your application.",
+    "warning": "Warning",
+    "warning-paragraph-1": "Please do not contact us until after {{values.estimated-reply-date}}.",
+    "warning-paragraph-2": "We will contact you if we need more information.",
+    "paragraph-2": "Processing times are based on the UK working week (Monday to Friday). They do not include public holidays in the UK or other countries.",
+    "heading-2": "What happens next",
+    "paragraph-3": "Visa processing times are based on the date you provided your biometrics.",
+    "paragraph-4": "We will contact you:",
+    "bullet-1": "if we have questions or need more information",
+    "bullet-2": "if your application is going to take longer than the standard processing time",
+    "bullet-3": "when we have made a decision",
+    "paragraph-5": "Please check your email regularly for updates, including your spam or junk folder.",
+    "paragraph-6": "If you asked to be contacted by letter, please check your post.",
+    "paragraph-7": "If you've finished, you can",
+    "link": "https://homeoffice.eu.qualtrics.com/jfe/form/SV_9Qrx3WHZAYtpTj8?Source=ISLASubmissionPage",
+    "link-text": "leave feedback (opens in a new tab)"
   }
 }
