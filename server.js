@@ -30,7 +30,7 @@ const startApp = () => {
 
   app.use((req, res, next) => {
     res.locals.htmlLang = 'en';
-    res.locals.feedbackUrl = config.survey.urls.acq;
+    res.locals.feedbackUrl = config.bannerFeedbackUrl;
     res.locals.disallowIndexing = config.disallowIndexing;
     if (req.is('multipart/form-data')) {
       try {
