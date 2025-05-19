@@ -16,3 +16,4 @@ metadata:
     {{ end }}
 data:
 {{ file .CONFIGMAP_VALUES | indent 2 }}
+    DEINDEX_FORM: "true"
