@@ -81,10 +81,12 @@ module.exports = {
       next: '/outcome-outside'
     },
     '/outcome-inside': {
-      behaviours: ['complete', summary]
+      behaviours: ['complete', summary],
+      backLink: false
     },
     '/outcome-outside': {
-      behaviours: ['complete', summary]
+      behaviours: ['complete', summary],
+      backLink: false
     },
     '/session-timeout': {},
     '/exit': {}

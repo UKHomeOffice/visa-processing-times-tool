@@ -293,7 +293,7 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
-.govuk-warning-text__icon {
+.outcome-inside-warning .govuk-warning-text__icon {
   margin-top: 7px;
 }
 
@@ -316,7 +316,3 @@ a {
   @extend .govuk-link;
 }
 
-.outcome-outside-warning .govuk-warning-text__icon {
-  top: 1em;
-  position: relative;
-}
