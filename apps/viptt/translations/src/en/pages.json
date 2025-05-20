@@ -35,5 +35,26 @@
     "paragraph-7": "If you've finished, you can",
     "link": "https://homeoffice.eu.qualtrics.com/jfe/form/SV_9Qrx3WHZAYtpTj8?Source=ISLASubmissionPage",
     "link-text": "leave feedback (opens in a new tab)"
+  },
+  "outcome-outside": {
+    "expected-reply": "You can expect a reply by {{values.estimated-reply-date}}",
+    "explanation": "This date is based on the standard processing time of {{values.sla-weeks}} weeks from {{values.application-start-date}}.",
+    "heading-1": "More information",
+    "paragraph-1": "If your application is taking longer than usual, you should have been contacted by UK Visas and Immigration.",
+    "warning": "Warning",
+    "warning-paragraph-1": "Please check your email, including your spam or junk folder.",
+    "paragraph-2": "Processing times are based on the UK working week (Monday to Friday). They do not include public holidays in the UK or other countries.",
+    "paragraph-8": "If you asked to be contacted by letter, check your post instead.",
+    "heading-2": "Why it might take longer",
+    "paragraph-4": "It may take longer to process your application if:",
+    "bullet-1": "the information in your application is not accurate or needs more consideration",
+    "bullet-2": "you need to provide further evidence, for example evidence of funds",
+    "bullet-3": "your supporting documents need to be verified",
+    "bullet-4": "you need to attend an interview",
+    "bullet-5": "we need more information on your personal circumstances (for example if you have a criminal conviction)",
+    "paragraph-5": "We will contact you if we need more information, so please check your email or post regularly.",
+    "paragraph-7": "If you've finished, you can",
+    "link": "https://homeoffice.eu.qualtrics.com/jfe/form/SV_9Qrx3WHZAYtpTj8?Source=ISLASubmissionPage",
+    "link-text": "leave feedback (opens in a new tab)"
   }
 }
