@@ -315,3 +315,8 @@ ul {
 a {
   @extend .govuk-link;
 }
+
+.outcome-outside-warning .govuk-warning-text__icon {
+  top: 1em;
+  position: relative;
+}
