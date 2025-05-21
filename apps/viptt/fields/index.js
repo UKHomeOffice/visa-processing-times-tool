@@ -53,6 +53,10 @@ module.exports = {
   'identity-verification-date': dateComponent('identity-verification-date', {
     mixin: 'input-date',
     isPageHeading: true,
-    validate: ['required', 'before']
+    validate: [
+      'required',
+      'before', //  Date must not be in the future
+      { type: 'after', arguments: ['1', 'years'] } // Date must not be more than 1 year in the past
+    ]
   })
 };

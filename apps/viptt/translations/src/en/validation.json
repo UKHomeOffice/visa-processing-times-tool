@@ -14,6 +14,7 @@
   "identity-verification-date": {
     "required": "Enter the date you provided your biometrics",
     "date": "You must enter a real date",
-    "before": "The date cannot be in the future"
+    "before": "The date cannot be in the future",
+    "after": "The date you enter must not be more than 12 months in the past"
   }
 }
