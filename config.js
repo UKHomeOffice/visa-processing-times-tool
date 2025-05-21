@@ -8,12 +8,7 @@ module.exports = {
   inputDateFormat: 'YYYY-MM-DD',
   displayDateFormat: 'D MMMM YYYY',
   env: env,
-  survey: {
-    urls: {
-      root: 'https://eforms.homeoffice.gov.uk/outreach/Feedback.ofml?FormName=coa/',
-      acq: 'https://eforms.homeoffice.gov.uk/outreach/Feedback.ofml?FormName=coa/'
-    }
-  },
+  bannerFeedbackUrl: 'https://homeoffice.eu.qualtrics.com/jfe/form/SV_9Qrx3WHZAYtpTj8?Source=BetaBanner',
   hosts: {
     acceptanceTests: process.env.ACCEPTANCE_HOST_NAME || `http://localhost:${process.env.PORT || 8080}`
   },
