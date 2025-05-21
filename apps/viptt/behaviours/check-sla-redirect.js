@@ -23,9 +23,20 @@ module.exports = superclass =>
       // Get the user's reason for applying depending on
       // whether they were inside or outside UK.
       const insideUK = req.sessionModel.get('were-you-in-uk') === 'yes';
-      const reasonForApplying = insideUK ?
+      let reasonForApplying = insideUK ?
         req.sessionModel.get('why-did-you-apply-inside') :
         req.sessionModel.get('why-did-you-apply-outside');
+
+      // Special case for health care worker visa:
+      // Check if the user has applied for a work visa while inside UK
+      if (insideUK && reasonForApplying === 'work-or-business-related-meetings') {
+        // Check if the user has selected the health care worker visa option
+        const appliedForHealthCareVisa = req.sessionModel.get('health-care-worker-visa');
+        if(appliedForHealthCareVisa === 'yes') {
+          // Override the reason for applying to health and care visa
+          reasonForApplying = 'work-visa-health-and-care';
+        }
+      }
 
       // Retrieve the correct sla data
       const slaData = this._serviceAgreements.getSLAData(reasonForApplying, insideUK);
