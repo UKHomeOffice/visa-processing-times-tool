@@ -11,7 +11,7 @@
     }
   },
   "why-did-you-apply-inside": {
-    "legend": "Why did you apply for a visa?",
+    "legend": "Why did you apply for a visa or extension?",
     "options": {
       "study-exam-or-school-exchange": {
         "label" : "To study, take an exam or join a school exchange programme"
