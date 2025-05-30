@@ -1,10 +1,5 @@
-{{<layout}}
-{{$journeyHeader}}
-{{#t}}journey.header{{/t}}
-{{/journeyHeader}}
-
-{{$propositionHeader}}{{/propositionHeader}}
-  {{$content}}
+{{<partials-page}}
+  {{$page-content}}
   <p>{{#t}}pages.out-of-scope.intro{{/t}}</p>
 
     <ul>
@@ -18,5 +13,5 @@
     </ul>
   <p>{{#t}}pages.out-of-scope.paragraph{{/t}}</p>
   
-  {{/content}}
-{{/layout}}
+  {{/page-content}}
+{{/partials-page}}
