@@ -316,3 +316,7 @@ a {
   @extend .govuk-link;
 }
 
+// Fix for headings not using Transport font
+.heading-large, h1 {
+    font-family: "GDS Transport", arial, sans-serif;
+}
