@@ -16,6 +16,6 @@
   "session": {
     "name": "viptt.hof.sid"
   },
-  "getAccessibility": true,
+  "getAccessibility": false,
   "emailerFallback": true
 }

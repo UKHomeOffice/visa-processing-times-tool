@@ -56,5 +56,8 @@
     "paragraph-7": "If you've finished, you can",
     "link": "https://homeoffice.eu.qualtrics.com/jfe/form/SV_9Qrx3WHZAYtpTj8?Source=OSLASubmissionPage",
     "link-text": "leave feedback (opens in a new tab)"
-  }
+  },
+    "accessibility": {
+       "header": "Accessibility statement for Check your visa processing time"
+    }
 }
