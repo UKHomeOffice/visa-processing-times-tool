@@ -88,6 +88,9 @@ module.exports = {
       behaviours: ['complete', summary],
       backLink: false
     },
+    '/accessibility': {
+
+    },
     '/session-timeout': {},
     '/exit': {}
   }
