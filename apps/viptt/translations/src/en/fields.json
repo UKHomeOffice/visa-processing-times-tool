@@ -29,7 +29,7 @@
         "label" : "I'm a British National Overseas (BNO) with connections to Hong Kong"
       },
       "something-else": {
-        "label" : "Something else"
+        "label" : "Something else (for example, a family visa or application to settle in the UK)"
       }
     }
   },
@@ -72,7 +72,7 @@
         "label" : "To travel through ('transit') on the way to another country"
       },
       "something-else": {
-        "label" : "Something else"
+        "label" : "Something else (for example, a family visa or application to settle in the UK)"
       }
     }
   },
