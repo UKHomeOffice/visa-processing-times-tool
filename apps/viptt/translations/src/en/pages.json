@@ -9,6 +9,7 @@
     "paragraph": "You can <a href='https://www.gov.uk/government/collections/visa-processing-times'>check standard visa processing times</a> to find out how long it usually takes to get a decision on a family or settlement application."
   },
   "outcome-inside": {
+    "title": "Outcome",
     "expected-reply": "You can expect a reply by {{values.estimated-reply-date}}",
     "explanation": "This date is based on the standard processing time of {{values.sla-weeks}} weeks from {{values.application-start-date}}.",
     "heading-1": "More information",
@@ -30,6 +31,7 @@
     "link-text": "leave feedback (opens in a new tab)"
   },
   "outcome-outside": {
+    "title": "Outcome",
     "expected-reply": "You should have received a reply by {{values.estimated-reply-date}}",
     "explanation": "This date is based on the standard processing time of {{values.sla-weeks}} weeks from {{values.application-start-date}}.",
     "heading-1": "More information",
