@@ -10,6 +10,20 @@
       }
     }
   },
+  "premium": {
+    "legend": "Did you pay for a 'priority' service?",
+    "options": {
+      "premium-none": {
+        "label": "No, I did not pay for a priority service"
+      },
+      "premium-priority": {
+        "label": "Yes, I paid for priority service"
+      },
+      "premium-super-priority": {
+        "label": "Yes, I paid for super priority service"
+      }
+    }
+  },
   "why-did-you-apply-inside": {
     "legend": "Why did you apply for a visa or extension?",
     "options": {

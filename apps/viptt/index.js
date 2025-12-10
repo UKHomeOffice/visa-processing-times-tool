@@ -18,23 +18,23 @@ module.exports = {
   steps: {
     '/location': {
       fields: ['were-you-in-uk'],
+      next: '/priority'
+    },
+    '/priority': {
+      fields: ['premium'],
       forks: [
         {
           target: '/application-reason-inside-uk',
-          condition: {
-            field: 'were-you-in-uk',
-            value: 'yes'
-          }
+          condition: req => req.sessionModel.get('premium') === 'premium-none' &&
+            req.sessionModel.get('were-you-in-uk') === 'yes'
         },
         {
           target: '/application-reason-outside-uk',
-          condition: {
-            field: 'were-you-in-uk',
-            value: 'no'
-          }
+          condition: req => req.sessionModel.get('premium') === 'premium-none' &&
+            req.sessionModel.get('were-you-in-uk') === 'no'
         }
       ],
-      next: '/application-reason-inside-uk'
+      next: '/family-visa',
     },
     '/application-reason-inside-uk': {
       fields: ['why-did-you-apply-inside'],
