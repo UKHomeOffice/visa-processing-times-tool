@@ -34,7 +34,7 @@ module.exports = {
             req.sessionModel.get('were-you-in-uk') === 'no'
         }
       ],
-      next: '/family-visa',
+      next: '/family-visa'
     },
     '/application-reason-inside-uk': {
       fields: ['why-did-you-apply-inside'],
