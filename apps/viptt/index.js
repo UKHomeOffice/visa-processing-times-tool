@@ -36,6 +36,19 @@ module.exports = {
       ],
       next: '/family-visa'
     },
+    '/family-visa': {
+      fields: ['applied-for-family-visa'],
+      forks: [
+        {
+          target: '/out-of-scope',
+          condition: {
+            field: 'applied-for-family-visa',
+            value: 'yes'
+          }
+        }
+      ],
+      next: '/biometrics'
+    },
     '/application-reason-inside-uk': {
       fields: ['why-did-you-apply-inside'],
       forks: [

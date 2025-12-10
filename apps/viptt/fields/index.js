@@ -20,6 +20,15 @@ module.exports = {
       'premium-super-priority'
     ]
   },
+  'applied-for-family-visa': {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    validate: ['required'],
+    options: [
+      'yes',
+      'no'
+    ]
+  },
   'why-did-you-apply-inside': {
     mixin: 'radio-group',
     isPageHeading: true,
