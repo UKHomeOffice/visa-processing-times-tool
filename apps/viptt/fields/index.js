@@ -10,6 +10,16 @@ module.exports = {
       'no'
     ]
   },
+  premium: {
+    mixin: 'radio-group',
+    isPageHeading: true,
+    validate: ['required'],
+    options: [
+      'premium-none',
+      'premium-priority',
+      'premium-super-priority'
+    ]
+  },
   'why-did-you-apply-inside': {
     mixin: 'radio-group',
     isPageHeading: true,
