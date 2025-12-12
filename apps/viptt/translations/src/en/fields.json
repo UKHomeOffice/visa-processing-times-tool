@@ -24,6 +24,18 @@
       }
     }
   },
+  "applied-for-family-visa": {
+    "legend": "Did you apply for a Family visa?",
+    "hint": "Family visas are used to join a family member who is already a British citizen or has settled status.",
+    "options": {
+      "yes": {
+        "label" : "Yes"
+      },
+      "no": {
+        "label" : "No"
+      }
+    }
+  },
   "why-did-you-apply-inside": {
     "legend": "Why did you apply for a visa or extension?",
     "options": {

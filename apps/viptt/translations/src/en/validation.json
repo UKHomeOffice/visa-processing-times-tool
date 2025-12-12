@@ -5,6 +5,9 @@
   "premium": {
     "required": "Select if you paid for a priority service"
   },
+  "applied-for-family-visa": {
+    "required": "Select if you applied for a Family visa"
+  },
   "why-did-you-apply-inside": {
     "required": "Select the reason you applied for a visa"
   },
