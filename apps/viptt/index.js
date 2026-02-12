@@ -100,6 +100,22 @@ module.exports = {
       behaviours: ['complete', summary],
       backLink: false
     },
+    '/priority-outcome-inside': {
+      behaviours: ['complete', summary],
+      backLink: false
+    },
+    '/superpriority-outcome-inside': {
+      behaviours: ['complete', summary],
+      backLink: false
+    },
+    '/priority-outcome-outside': {
+      behaviours: ['complete', summary],
+      backLink: false
+    },
+    '/superpriority-outcome-outside': {
+      behaviours: ['complete', summary],
+      backLink: false
+    },
     '/accessibility': {},
     '/exit': {}
   }
