@@ -8,6 +8,6 @@ It may take longer to process your application if:
 - you need to attend an interview
 - we need more information on your personal circumstances (for example if you have a criminal conviction)
 
-We will contact you if we need more information, so please check your email or post regularly.
+We will contact you if we need more information, so please check your email regularly. 
 
 If you asked to be contacted by letter, check your post instead.

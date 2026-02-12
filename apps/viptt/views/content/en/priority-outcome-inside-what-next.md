@@ -8,3 +8,5 @@ We will contact you:
 - when we have made a decision
 
 Please check your email regularly for updates, including your spam or junk folder.
+
+If you asked to be contacted by letter, check your post instead.
