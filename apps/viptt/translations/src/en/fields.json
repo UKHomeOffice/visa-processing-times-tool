@@ -14,7 +14,7 @@
     "legend": "Did you pay for a 'priority' service?",
     "options": {
       "premium-none": {
-        "label": "No, I did not pay for a priority service"
+        "label": "No, I did not pay for a 'priority' service"
       },
       "premium-priority": {
         "label": "Yes, I paid for priority service"
