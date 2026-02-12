@@ -90,8 +90,7 @@ module.exports = {
     },
     '/biometrics': {
       fields: ['identity-verification-date'],
-      behaviours: [checkSlaRedirect],
-      next: '/outcome-outside'
+      behaviours: [checkSlaRedirect]
     },
     '/outcome-inside': {
       behaviours: ['complete', summary],

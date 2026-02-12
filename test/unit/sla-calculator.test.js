@@ -130,5 +130,17 @@ describe('SlaCalculator', () => {
       const isWithin = slaCalculator.isWithinEstimate(replyDate, currentDate);
       expect(isWithin).toBe(false);
     });
+
+    test('isWithinEstimate uses default current date when not provided (future reply)', () => {
+      const replyDate = moment().add(1, 'day');
+      const isWithin = slaCalculator.isWithinEstimate(replyDate);
+      expect(isWithin).toBe(true);
+    });
+
+    test('isWithinEstimate uses default current date when not provided (past reply)', () => {
+      const replyDate = moment().subtract(1, 'day');
+      const isWithin = slaCalculator.isWithinEstimate(replyDate);
+      expect(isWithin).toBe(false);
+    });
   });
 });

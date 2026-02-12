@@ -59,6 +59,16 @@
         "weeks": "12",
         "days": "60"
       }
+    },
+    "premium": {
+      "premium-priority": {
+        "weeks": "1",
+        "days": "5"
+      },
+      "premium-super-priority": {
+        "weeks": "0.2",
+        "days": "1"
+      }
     }
   }
 }
