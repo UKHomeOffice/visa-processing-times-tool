@@ -16,12 +16,12 @@ describe('SlaOutcome', () => {
       expect(slaOutcome.getOutcomePath('premium-priority', false)).toBe('priority-outcome-outside');
     });
 
-    it('returns super-priority-outcome-inside for premium-super-priority and insideSLA true', () => {
-      expect(slaOutcome.getOutcomePath('premium-super-priority', true)).toBe('super-priority-outcome-inside');
+    it('returns superpriority-outcome-inside for premium-super-priority and insideSLA true', () => {
+      expect(slaOutcome.getOutcomePath('premium-super-priority', true)).toBe('superpriority-outcome-inside');
     });
 
-    it('returns super-priority-outcome-outside for premium-super-priority and insideSLA false', () => {
-      expect(slaOutcome.getOutcomePath('premium-super-priority', false)).toBe('super-priority-outcome-outside');
+    it('returns superpriority-outcome-outside for premium-super-priority and insideSLA false', () => {
+      expect(slaOutcome.getOutcomePath('premium-super-priority', false)).toBe('superpriority-outcome-outside');
     });
 
     it('returns outcome-inside for premium-none and insideSLA true', () => {

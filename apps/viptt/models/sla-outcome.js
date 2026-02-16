@@ -2,7 +2,7 @@
 
 const OUTCOME_PATHS = {
   'premium-priority': 'priority-outcome',
-  'premium-super-priority': 'super-priority-outcome'
+  'premium-super-priority': 'superpriority-outcome'
 };
 
 const INSIDE = 'inside';
@@ -17,7 +17,7 @@ module.exports = class SlaOutcome {
     *
     * Behavior:
     * - Premium selections `'premium-priority'` and `'premium-super-priority'` map
-    *   to bases `priority-outcome` and `super-priority-outcome` respectively.
+    *   to bases `priority-outcome` and `superpriority-outcome` respectively.
     * - Non-premium selections (e.g., `'premium-none'` or any unknown string) map to base `outcome`.
     * - Suffix is `inside` when `insideSLA === true`, otherwise `outside`.
     * - Returns a path segment without a leading slash; callers should prepend
@@ -25,7 +25,7 @@ module.exports = class SlaOutcome {
     *
     * Examples:
     * - getOutcomePath('premium-priority', true)  => 'priority-outcome-inside'
-    * - getOutcomePath('premium-super-priority', false) => 'super-priority-outcome-outside'
+    * - getOutcomePath('premium-super-priority', false) => 'superpriority-outcome-outside'
     * - getOutcomePath('premium-none', false) => 'outcome-outside'
     *
     * @param {string} outcomeOption - Must be a non-empty primitive string;

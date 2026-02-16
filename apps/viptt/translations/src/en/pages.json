@@ -8,51 +8,28 @@
     "intro": "You cannot use this tool if you applied for a family visa or application to settle in the UK. This is because processing times vary depending on your personal circumstances.",
     "paragraph": "You can <a href='https://www.gov.uk/government/collections/visa-processing-times'>check standard visa processing times</a> to find out how long it usually takes to get a decision on a family or settlement application."
   },
+  "warning-text": {
+    "warning": "Warning"
+  },
   "outcome-inside": {
-    "title": "Outcome",
-    "expected-reply": "You can expect a reply by {{values.estimated-reply-date}}",
-    "explanation": "This date is based on the standard processing time of {{values.sla-weeks}} weeks from {{values.application-start-date}}.",
-    "heading-1": "More information",
-    "paragraph-1": "We are currently processing your application.",
-    "warning": "Warning",
-    "warning-paragraph-1": "Please do not contact us until after {{values.estimated-reply-date}}.",
-    "warning-paragraph-2": "We will contact you if we need more information.",
-    "paragraph-2": "Processing times are based on the UK working week (Monday to Friday) and include public holidays in the UK. They do not include public holidays in other countries.",
-    "heading-2": "What happens next",
-    "paragraph-3": "Visa processing times are based on the date you provided your biometrics.",
-    "paragraph-4": "We will contact you:",
-    "bullet-1": "if we have questions or need more information",
-    "bullet-2": "if your application is going to take longer than the standard processing time",
-    "bullet-3": "when we have made a decision",
-    "paragraph-5": "Please check your email regularly for updates, including your spam or junk folder.",
-    "paragraph-6": "If you asked to be contacted by letter, please check your post.",
-    "paragraph-7": "If you've finished, you can",
-    "link": "https://homeoffice.eu.qualtrics.com/jfe/form/SV_9Qrx3WHZAYtpTj8?Source=ISLASubmissionPage",
-    "link-text": "leave feedback (opens in a new tab)"
+    "title": "Outcome"
   },
-  "outcome-outside": {
-    "title": "Outcome",
-    "expected-reply": "You should have received a reply by {{values.estimated-reply-date}}",
-    "explanation": "This date is based on the standard processing time of {{values.sla-weeks}} weeks from {{values.application-start-date}}.",
-    "heading-1": "More information",
-    "paragraph-1": "If your application is taking longer than usual, you should have been contacted by UK Visas and Immigration.",
-    "warning": "Warning",
-    "warning-paragraph-1": "Please check your email, including your spam or junk folder.",
-    "paragraph-2": "Processing times are based on the UK working week (Monday to Friday) and include public holidays in the UK. They do not include public holidays in other countries.",
-    "paragraph-8": "If you asked to be contacted by letter, check your post instead.",
-    "heading-2": "Why it might take longer",
-    "paragraph-4": "It may take longer to process your application if:",
-    "bullet-1": "the information in your application is not accurate or needs more consideration",
-    "bullet-2": "you need to provide further evidence, for example evidence of funds",
-    "bullet-3": "your supporting documents need to be verified",
-    "bullet-4": "you need to attend an interview",
-    "bullet-5": "we need more information on your personal circumstances (for example if you have a criminal conviction)",
-    "paragraph-5": "We will contact you if we need more information, so please check your email or post regularly.",
-    "paragraph-7": "If you've finished, you can",
-    "link": "https://homeoffice.eu.qualtrics.com/jfe/form/SV_9Qrx3WHZAYtpTj8?Source=OSLASubmissionPage",
-    "link-text": "leave feedback (opens in a new tab)"
+  "priority-outcome-inside": {
+    "title": "Outcome"
   },
-    "accessibility": {
-       "header": "Accessibility statement for Check your visa processing time"
-    }
+  "superpriority-outcome-inside": {
+    "title": "Outcome"
+  },
+   "outcome-outside": {
+    "title": "Outcome"
+  },
+  "priority-outcome-outside": {
+    "title": "Outcome"
+  },
+  "superpriority-outcome-outside": {
+    "title": "Outcome"
+  },
+  "accessibility": {
+    "header": "Accessibility statement for Check your visa processing time"
+  }
 }
