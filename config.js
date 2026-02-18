@@ -8,7 +8,7 @@ module.exports = {
   inputDateFormat: 'YYYY-MM-DD',
   displayDateFormat: 'D MMMM YYYY',
   env: env,
-  bannerFeedbackUrl: 'https://homeoffice.eu.qualtrics.com/jfe/form/SV_9Qrx3WHZAYtpTj8?Source=BetaBanner',
+  bannerFeedbackUrl: 'https://ukhomeoffice.qualtrics.com/jfe/form/SV_0fBOC4ZpUAV2gIu?Source=BetaBanner',
   hosts: {
     acceptanceTests: process.env.ACCEPTANCE_HOST_NAME || `http://localhost:${process.env.PORT || 8080}`
   },

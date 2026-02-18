@@ -10,6 +10,32 @@
       }
     }
   },
+  "premium": {
+    "legend": "Did you pay for a 'priority' service?",
+    "options": {
+      "premium-none": {
+        "label": "No, I did not pay for a 'priority' service"
+      },
+      "premium-priority": {
+        "label": "Yes, I paid for priority service"
+      },
+      "premium-super-priority": {
+        "label": "Yes, I paid for super priority service"
+      }
+    }
+  },
+  "applied-for-family-visa": {
+    "legend": "Did you apply for a Family visa?",
+    "hint": "Family visas are used to join a family member who is already a British citizen or has settled status.",
+    "options": {
+      "yes": {
+        "label" : "Yes"
+      },
+      "no": {
+        "label" : "No"
+      }
+    }
+  },
   "why-did-you-apply-inside": {
     "legend": "Why did you apply for a visa or extension?",
     "options": {

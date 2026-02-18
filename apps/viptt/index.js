@@ -18,23 +18,36 @@ module.exports = {
   steps: {
     '/location': {
       fields: ['were-you-in-uk'],
+      next: '/priority'
+    },
+    '/priority': {
+      fields: ['premium'],
       forks: [
         {
           target: '/application-reason-inside-uk',
-          condition: {
-            field: 'were-you-in-uk',
-            value: 'yes'
-          }
+          condition: req => req.sessionModel.get('premium') === 'premium-none' &&
+            req.sessionModel.get('were-you-in-uk') === 'yes'
         },
         {
           target: '/application-reason-outside-uk',
+          condition: req => req.sessionModel.get('premium') === 'premium-none' &&
+            req.sessionModel.get('were-you-in-uk') === 'no'
+        }
+      ],
+      next: '/family-visa'
+    },
+    '/family-visa': {
+      fields: ['applied-for-family-visa'],
+      forks: [
+        {
+          target: '/out-of-scope',
           condition: {
-            field: 'were-you-in-uk',
-            value: 'no'
+            field: 'applied-for-family-visa',
+            value: 'yes'
           }
         }
       ],
-      next: '/application-reason-inside-uk'
+      next: '/biometrics'
     },
     '/application-reason-inside-uk': {
       fields: ['why-did-you-apply-inside'],
@@ -77,14 +90,29 @@ module.exports = {
     },
     '/biometrics': {
       fields: ['identity-verification-date'],
-      behaviours: [checkSlaRedirect],
-      next: '/outcome-outside'
+      behaviours: [checkSlaRedirect]
     },
     '/outcome-inside': {
       behaviours: ['complete', summary],
       backLink: false
     },
     '/outcome-outside': {
+      behaviours: ['complete', summary],
+      backLink: false
+    },
+    '/priority-outcome-inside': {
+      behaviours: ['complete', summary],
+      backLink: false
+    },
+    '/superpriority-outcome-inside': {
+      behaviours: ['complete', summary],
+      backLink: false
+    },
+    '/priority-outcome-outside': {
+      behaviours: ['complete', summary],
+      backLink: false
+    },
+    '/superpriority-outcome-outside': {
       behaviours: ['complete', summary],
       backLink: false
     },
