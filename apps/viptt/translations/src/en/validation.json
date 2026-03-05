@@ -3,7 +3,7 @@
     "required": "Select yes or no"
   },
   "premium": {
-    "required": "Select if you paid for a 'priority' service"
+    "required": "Select if you paid for a faster decision"
   },
   "applied-for-family-visa": {
     "required": "Select if you applied for a Family visa"
