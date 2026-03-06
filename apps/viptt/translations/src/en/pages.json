@@ -24,7 +24,8 @@
     "title": "Outcome"
   },
   "priority-outcome-outside": {
-    "title": "Outcome"
+    "title": "Outcome",
+    "warning-msg": "Please check your email, including your spam or junk folder."
   },
   "superpriority-outcome-outside": {
     "title": "Outcome"
