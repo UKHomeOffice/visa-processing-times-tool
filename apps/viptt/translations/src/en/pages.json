@@ -27,7 +27,8 @@
     "title": "Outcome"
   },
   "superpriority-outcome-outside": {
-    "title": "Outcome"
+    "title": "Outcome",
+    "warning-msg": "Please check your email, including your spam or junk folder."
   },
   "accessibility": {
     "header": "Accessibility statement for Check your visa processing time"
