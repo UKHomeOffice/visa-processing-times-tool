@@ -3,12 +3,13 @@
     <div class="govuk-panel govuk-panel--confirmation">
         {{#markdown}}expected-reply-date{{/markdown}}
     </div>
-    {{#markdown}}priority-outcome-inside-more-info{{/markdown}}
+    {{#markdown}}priority-outcome-inside-date-info{{/markdown}}
     {{<partials-outcome-inside-warning-msg}}
       {{$warning-text}}
-        {{#markdown}}outcome-inside-warning{{/markdown}}
+        {{#t}}pages.priority-outcome-inside.warning-msg{{/t}}
       {{/warning-text}}
     {{/partials-outcome-inside-warning-msg}}
+    {{#markdown}}priority-outcome-inside-more-info{{/markdown}}
     {{#markdown}}priority-outcome-inside-what-next{{/markdown}}
     <div class="govuk-inset-text">
       {{#markdown}}inside-feedback-link{{/markdown}}
