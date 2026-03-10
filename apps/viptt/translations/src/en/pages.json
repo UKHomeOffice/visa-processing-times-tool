@@ -4,9 +4,7 @@
     "paragraph": "A <a href='https://www.gov.uk/health-care-worker-visa'>Health and Care Worker</a> visa allows medical professionals to do an eligible job with the NHS, an NHS supplier or in adult social care."
   },
   "out-of-scope": {
-    "header": "Family visas and applications to settle in the UK",
-    "intro": "You cannot use this tool if you applied for a family visa or application to settle in the UK. This is because processing times vary depending on your personal circumstances.",
-    "paragraph": "You can <a href='https://www.gov.uk/government/collections/visa-processing-times'>check standard visa processing times</a> to find out how long it usually takes to get a decision on a family or settlement application."
+    "header": "Family visas and applications to settle in the UK"
   },
   "warning-text": {
     "warning": "Warning"
