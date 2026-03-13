@@ -1,5 +1,3 @@
-Processing times are based on the UK working week (Monday to Friday) and include public holidays in the UK. They do not include public holidays in other countries.
-
 ## What happens next
 It sometimes takes longer to get a decision. 
 

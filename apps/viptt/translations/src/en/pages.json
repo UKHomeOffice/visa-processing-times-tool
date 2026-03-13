@@ -10,22 +10,28 @@
     "warning": "Warning"
   },
   "outcome-inside": {
-    "title": "Outcome"
+    "title": "Outcome",
+    "warning-msg": "Please do not contact us until after {{values.estimated-reply-date}}.<br />We will contact you if we need more information."
   },
   "priority-outcome-inside": {
-    "title": "Outcome"
+    "title": "Outcome",
+    "warning-msg": "Please do not contact us until after {{values.estimated-reply-date}}.<br />We will contact you if we need more information."
   },
   "superpriority-outcome-inside": {
-    "title": "Outcome"
+    "title": "Outcome",
+    "warning-msg": "Please do not contact us until after {{values.estimated-reply-date}}.<br />We will contact you if we need more information."
   },
    "outcome-outside": {
-    "title": "Outcome"
+    "title": "Outcome",
+    "warning-msg": "Please check your email, including your spam or junk folder."
   },
   "priority-outcome-outside": {
-    "title": "Outcome"
+    "title": "Outcome",
+    "warning-msg": "Please check your email, including your spam or junk folder."
   },
   "superpriority-outcome-outside": {
-    "title": "Outcome"
+    "title": "Outcome",
+    "warning-msg": "Please check your email, including your spam or junk folder."
   },
   "accessibility": {
     "header": "Accessibility statement for Check your visa processing time"
