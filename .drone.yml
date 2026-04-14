@@ -9,6 +9,11 @@ environment:
   STG_ENV: sas-viptt-stg
   UAT_ENV: sas-viptt-uat
   BRANCH_ENV: sas-viptt-branch
+  REDIS_PERSISTENCE_ENABLED: "true"
+  REDIS_PERSISTENCE_ACCESS_MODES: ReadWriteOnce
+  REDIS_PERSISTENCE_STORAGE_CLASS: gp2-encrypted-eu-west-2b
+  REDIS_PERSISTENCE_EXISTING_CLAIM: ""
+  REDIS_PERSISTENCE_ANNOTATIONS_FILE: ""
   PRODUCTION_URL: www.check-your-visa-processing-time.homeoffice.gov.uk
   IMAGE_URL: 340268328991.dkr.ecr.eu-west-2.amazonaws.com
   IMAGE_REPO: sas/viptt
