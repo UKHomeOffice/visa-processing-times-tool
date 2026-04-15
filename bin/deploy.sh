@@ -13,12 +13,17 @@ export REDIS_PERSISTENCE_ACCESS_MODES=${REDIS_PERSISTENCE_ACCESS_MODES:-"ReadWri
 export REDIS_PERSISTENCE_STORAGE_CLASS=${REDIS_PERSISTENCE_STORAGE_CLASS:-""}
 export REDIS_PERSISTENCE_EXISTING_CLAIM=${REDIS_PERSISTENCE_EXISTING_CLAIM:-""}
 export REDIS_PERSISTENCE_ANNOTATIONS_FILE=${REDIS_PERSISTENCE_ANNOTATIONS_FILE:-""}
+export REDIS_PERSISTENCE_SIZE=${REDIS_PERSISTENCE_SIZE:-"1Gi"}
+
+sanitize_branch_name() {
+  echo "$1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//'
+}
 
 kd='kd --insecure-skip-tls-verify --timeout 10m --check-interval 10s'
 
 if [[ $1 == 'tear_down' ]]; then
   export KUBE_NAMESPACE=$BRANCH_ENV
-  export DRONE_SOURCE_BRANCH=$(cat /root/.dockersock/branch_name.txt)
+  export DRONE_SOURCE_BRANCH=$(sanitize_branch_name "$(cat /root/.dockersock/branch_name.txt)")
 
   $kd --delete -f kube/configmaps/configmap.yml
   $kd --delete -f kube/redis -f kube/app
@@ -27,7 +32,7 @@ if [[ $1 == 'tear_down' ]]; then
 fi
 
 export KUBE_NAMESPACE=$1
-export DRONE_SOURCE_BRANCH=$(echo $DRONE_SOURCE_BRANCH | tr '[:upper:]' '[:lower:]' | tr '/' '-')
+export DRONE_SOURCE_BRANCH=$(sanitize_branch_name "$DRONE_SOURCE_BRANCH")
 
 if [[ ${KUBE_NAMESPACE} == ${PROD_ENV} ]]; then
   export REDIS_PERSISTENCE_SIZE=5Gi
