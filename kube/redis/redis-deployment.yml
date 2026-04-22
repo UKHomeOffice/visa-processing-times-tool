@@ -9,11 +9,8 @@ metadata:
   {{ end }}
 spec:
   replicas: 1
-  # strategy:
-  #   type: RollingUpdate
-  #   rollingUpdate:
-  #     maxSurge: 0
-  #     maxUnavailable: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
@@ -34,7 +31,7 @@ spec:
         app: redis
         {{ end }}
     spec:
-      # terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 30
       securityContext:
         fsGroup: 994
         fsGroupChangePolicy: OnRootMismatch
@@ -42,10 +39,10 @@ spec:
         - name: redis
           # redis:v7.0.15
           image: quay.io/ukhomeofficedigital/hof-docker-redis:7.0.15@sha256:cd4965fbb8aa6e4eba058985cc52f6a3ececdfa6d79ba44206f051f72a1f0611
-          # lifecycle:
-          #   preStop:
-          #     exec:
-          #       command: ["/bin/sh", "-c", "sleep 5"]
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "sleep 5"]
           ports:
             - containerPort: 6379
           volumeMounts:
