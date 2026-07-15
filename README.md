@@ -18,7 +18,7 @@ SLA data is stored in JSON and checked in to version control. Currently, there i
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en/) - v.20 LTS
+- [Node.js](https://nodejs.org/en/) - for supported versions see `engines.node` in [package.json](package.json)
 - [Redis server](http://redis.io/download) running on default port 6379
 
 ### Setup
