@@ -2,7 +2,10 @@ FROM node:24.18.0-alpine3.24@sha256:4ba75f835bb8802193e4c114572113d4b26f95f6f094
 USER root
 
 # Update the package index and upgrade all installed packages to their latest versions
-RUN apk update && apk upgrade --no-cache
+RUN apk upgrade --no-cache
+
+# Upgrade bundled npm deps so Trivy does not report vulnerable undici from base image toolchain
+RUN npm install -g npm@12.0.0 && npm --version
 
 # Setup nodejs group & nodejs user
 RUN addgroup --system nodejs --gid 998 && \
@@ -15,7 +18,8 @@ WORKDIR /app
 
 COPY --chown=999:998 . /app
 
-RUN yarn install --frozen-lockfile --production --ignore-optional --ignore-scripts --non-interactive
+RUN yarn install --frozen-lockfile --production && \
+    yarn run postinstall
 
 HEALTHCHECK --interval=5m --timeout=3s \
  CMD curl --fail http://localhost:8080 || exit 1

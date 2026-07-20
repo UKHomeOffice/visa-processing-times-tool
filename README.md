@@ -27,6 +27,13 @@ SLA data is stored in JSON and checked in to version control. Currently, there i
 2. Install dependencies using the command `yarn`.
 3. Start the service in development mode using `yarn run start:dev`.
 
+
+## Install & Run the Application locally with VS Code Dev Containers
+
+Alternatively, if you are using [Visual Studio Code](https://code.visualstudio.com/) (VS Code), you can run the application with a [VS Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers).
+
+The `.devcontainer` folder contains the necessary configuration files for the devcontainer.
+
 ### Testing
 
 Tests are run using [Jest](https://jestjs.io/).
