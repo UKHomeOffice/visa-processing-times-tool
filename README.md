@@ -27,6 +27,27 @@ SLA data is stored in JSON and checked in to version control. Currently, there i
 2. Install dependencies using the command `yarn`.
 3. Start the service in development mode using `yarn run start:dev`.
 
+## Install & Run the Application locally with Docker Compose
+
+You can containerise the application using [Docker](https://www.docker.com). The `.devcontainer` directory includes a `docker-compose.dev.yml` file for orchestrating multi-container application.
+
+### Prerequisites
+
+   - [Docker](https://www.docker.com)
+
+### Setup
+
+By following these steps, you should be able to install and run your application using a Docker Compose. This provides a consistent development environment across different machines and ensures that all required dependencies are available.
+
+1. Make sure you have Docker installed and running on your machine. Docker is needed to create and manage your containers.
+
+2. To configure your dev environment, copy `/.devcontainer/devcontainer.env.sample` to `devcontainer.env` in the same directory and fill in the necessary values. This ensures your development container is set up with the required environment variables.
+
+3. Open a terminal, navigate to the project directory and run: `docker compose -f .devcontainer/docker-compose.dev.yml up -d`
+
+4. Once the containers are built and started, you can go inside the app container: `docker exec -it devcontainer-hof-csl-app-1 sh` (note: Docker containers may be named differently)
+
+5. Run the necessary commands to install dependencies `yarn` and `yarn start:dev` to start your application.
 
 ## Install & Run the Application locally with VS Code Dev Containers
 
