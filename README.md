@@ -45,7 +45,7 @@ By following these steps, you should be able to install and run your application
 
 3. Open a terminal, navigate to the project directory and run: `docker compose -f .devcontainer/docker-compose.dev.yml up -d`
 
-4. Once the containers are built and started, you can go inside the app container: `docker exec -it devcontainer-hof-csl-app-1 sh` (note: Docker containers may be named differently)
+4. Once the containers are built and started, you can go inside the app container: `docker exec -it devcontainer-hof-viptt-app-1 sh` (note: Docker containers may be named differently)
 
 5. Run the necessary commands to install dependencies `yarn` and `yarn start:dev` to start your application.
 
