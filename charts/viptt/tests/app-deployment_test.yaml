@@ -1,0 +1,17 @@
+suite: app deployment common labels
+templates:
+  - templates/app-deployment.yaml
+tests:
+  - it: renders custom common labels on deployment metadata and pod template metadata
+    set:
+      commonLabels:
+        team: platform
+    asserts:
+      - isKind:
+          of: Deployment
+      - equal:
+          path: metadata.labels.team
+          value: platform
+      - equal:
+          path: spec.template.metadata.labels.team
+          value: platform
