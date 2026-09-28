@@ -31,6 +31,9 @@ on:
         type: string
         default: ""
 
+permissions:
+  contents: read
+
 jobs:
   validation:
     uses: Home-Office-Digital/core-cloud-workflow-helm-ecr-actions/.github/workflows/validation.yml@1.0.0

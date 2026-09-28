@@ -5,6 +5,8 @@ tests:
   - it: renders custom common labels on deployment metadata and pod template metadata
     set:
       commonLabels:
+        app.kubernetes.io/name: should-not-override
+        app.kubernetes.io/instance: should-not-override
         team: platform
     asserts:
       - isKind:
@@ -13,5 +15,17 @@ tests:
           path: metadata.labels.team
           value: platform
       - equal:
+          path: metadata.labels["app.kubernetes.io/name"]
+          value: viptt-app
+      - equal:
+          path: metadata.labels["app.kubernetes.io/instance"]
+          value: RELEASE-NAME
+      - equal:
           path: spec.template.metadata.labels.team
           value: platform
+      - equal:
+          path: spec.template.metadata.labels["app.kubernetes.io/name"]
+          value: viptt-app
+      - equal:
+          path: spec.template.metadata.labels["app.kubernetes.io/instance"]
+          value: RELEASE-NAME
