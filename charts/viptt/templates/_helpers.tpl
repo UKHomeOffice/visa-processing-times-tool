@@ -115,15 +115,6 @@ false
 {{/*
 Get replica count based on environment
 */}}
-{{- define "viptt-app.replicas" -}}
-{{- if eq .Values.global.environment "prod" }}
-2
-{{- else }}
-1
-{{- end }}
-{{- end }}
-
-{{/*
 Get ConfigMap name with branch suffix if applicable
 */}}
 {{- define "viptt-app.configMapName" -}}

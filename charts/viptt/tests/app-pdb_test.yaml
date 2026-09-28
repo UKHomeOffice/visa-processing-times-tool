@@ -7,6 +7,8 @@ tests:
       app:
         replicas: 2
       commonLabels:
+        app.kubernetes.io/name: should-not-override
+        app.kubernetes.io/instance: should-not-override
         team: platform
     asserts:
       - isKind:
@@ -14,3 +16,9 @@ tests:
       - equal:
           path: metadata.labels.team
           value: platform
+      - equal:
+          path: metadata.labels["app.kubernetes.io/name"]
+          value: viptt-app
+      - equal:
+          path: metadata.labels["app.kubernetes.io/instance"]
+          value: RELEASE-NAME

@@ -13,6 +13,11 @@ app:
 # Optional additional labels applied to app and redis resources
 commonLabels: {}
 
+# Optional branch-specific overrides used by helper templates
+branch:
+  enabled: false
+  name: ""
+
 # Image configuration
 image:
   repository: ghcr.io/ukhomeoffice/hff-app
