@@ -1,0 +1,33 @@
+suite: redis deployment common labels
+templates:
+  - templates/redis-deployment.yaml
+tests:
+  - it: renders custom common labels on redis deployment metadata and pod template metadata
+    set:
+      redis:
+        enabled: true
+      commonLabels:
+        app.kubernetes.io/name: should-not-override
+        app.kubernetes.io/instance: should-not-override
+        team: platform
+    asserts:
+      - isKind:
+          of: Deployment
+      - equal:
+          path: metadata.labels.team
+          value: platform
+      - equal:
+          path: metadata.labels["app.kubernetes.io/name"]
+          value: redis
+      - equal:
+          path: metadata.labels["app.kubernetes.io/instance"]
+          value: RELEASE-NAME
+      - equal:
+          path: spec.template.metadata.labels.team
+          value: platform
+      - equal:
+          path: spec.template.metadata.labels["app.kubernetes.io/name"]
+          value: redis
+      - equal:
+          path: spec.template.metadata.labels["app.kubernetes.io/instance"]
+          value: RELEASE-NAME

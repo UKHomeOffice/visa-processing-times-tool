@@ -71,7 +71,7 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{/*
 Get app name with branch suffix if applicable
 */}}
-{{- define "vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp-app.appName" -}}
+{{- define "viptt-app.appName" -}}
 {{- if .Values.branch.enabled }}
 {{- printf "%s-%s" .Values.app.name .Values.branch.name }}
 {{- else }}

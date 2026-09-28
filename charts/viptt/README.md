@@ -73,7 +73,7 @@ commonLabels:
   owner: app-team
 ```
 
-Any key/value pairs under `commonLabels` are added to app and redis Deployment metadata labels, pod template labels, and the app PodDisruptionBudget metadata labels.
+Any key/value pairs under `commonLabels` are added only to the app Deployment metadata and pod template labels, the Redis Deployment metadata and pod template labels when `redis.enabled` is `true`, and the app PodDisruptionBudget metadata labels when that resource is rendered. They are not applied to Services, Ingresses, ConfigMaps, or NetworkPolicies.
 
 #### Ingress Configuration
 ```yaml
