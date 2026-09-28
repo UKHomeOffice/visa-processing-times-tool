@@ -43,7 +43,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 User-provided labels excluding keys managed by chart selectors.
 */}}
-{{- define "hff-app.commonLabels" -}}
+{{- define "viptt-app.commonLabels" -}}
 {{- range $k := keys .Values.commonLabels | sortAlpha }}
 {{- if and (ne $k "app.kubernetes.io/name") (ne $k "app.kubernetes.io/instance") }}
 {{- $v := index $.Values.commonLabels $k }}
