@@ -1,0 +1,16 @@
+suite: app pdb common labels
+templates:
+  - templates/app-pdb.yaml
+tests:
+  - it: renders custom common labels on the app pod disruption budget metadata
+    set:
+      app:
+        replicas: 2
+      commonLabels:
+        team: platform
+    asserts:
+      - isKind:
+          of: PodDisruptionBudget
+      - equal:
+          path: metadata.labels.team
+          value: platform

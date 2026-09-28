@@ -22,7 +22,7 @@ Create a default fully qualified app name.
 {{- end }}
 
 {{/*
-Create chart name and version as used by the chart label.
+Create chart name and app version as used by the chart label.
 */}}
 {{- define "viptt-app.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.AppVersion | replace "+" "_" | trunc 63 | trimSuffix "-" }}
