@@ -1,13 +1,13 @@
-# Default values for hff-app Helm chart
+# Default values for viptt-app Helm chart
 
 # Global settings
 global:
-  namespace: hff-app
+  namespace: viptt-app
   environment: dev
 
 # Application configuration
 app:
-  name: hff-app
+  name: viptt-app
   replicas: 1
 
 # Optional additional labels applied to app and redis resources
@@ -15,7 +15,7 @@ commonLabels: {}
 
 # Image configuration
 image:
-  repository: ghcr.io/ukhomeoffice/hff-app
+  repository: ghcr.io/ukhomeoffice/viptt-app
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -104,17 +104,17 @@ externalSecrets:
 # Secrets
 secrets:
   sessionSecret:
-    name: hff-app-secrets
+    name: viptt-app-secrets
     key: sessionSecret
     remoteKey: ""
     remoteProperty: ""
   notifyKey:
-    name: hff-app-secrets
+    name: viptt-app-secrets
     key: notifyKey
     remoteKey: ""
     remoteProperty: ""
   queryKey:
-    name: hff-app-secrets
+    name: viptt-app-secrets
     key: queryKey
     remoteKey: ""
     remoteProperty: ""
@@ -126,7 +126,7 @@ secrets:
 envFromSecret:
   enabled: false
   # Name of the Secret to mount via envFrom.
-  name: hff-app-config
+  name: viptt-app-config
   # Optional. When set (and externalSecrets.enabled=true) an ExternalSecret is
   # rendered that extracts every property of this remote secret into the Secret
   # above. Leave empty if the Secret is managed outside this chart.

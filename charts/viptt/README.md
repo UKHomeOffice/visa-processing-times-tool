@@ -1,4 +1,4 @@
-# HFF App Helm Chart
+# VIPTT App Helm Chart
 
 A comprehensive Helm chart for deploying the VIPTT (Visa-Processing-Times-Tool) application on Kubernetes, including support for Redis caching, Nginx proxy, ingress, and network policies.
 
@@ -167,7 +167,7 @@ Config that should not be held in the deployment repository can be supplied from
 ```yaml
 envFromSecret:
   enabled: true
-  name: hff-app-config
+  name:viptt-app-config
   remoteKey: <remote-secret-name-or-path>
 ```
 
