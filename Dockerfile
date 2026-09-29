@@ -4,8 +4,9 @@ USER root
 # Update Alpine packages with latest security and bug fixes
 RUN apk upgrade --no-cache
 
-# Upgrade npm from the base image to patch vulnerable bundled dependencies
-RUN npm install -g npm@12.0.1 && npm --version
+# Upgrade npm from the base image to patch vulnerable bundled dependencies.
+# npm 12.1.0 bundles tar ^7.5.22 (CVE-2026-73566 is fixed in 7.5.21).
+RUN npm install -g npm@12.1.0 && npm --version
 
 # Setup nodejs group & nodejs user
 RUN addgroup --system nodejs --gid 998 && \
