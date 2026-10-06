@@ -31,7 +31,7 @@ service:
     http: 10080
     https: 10443
 
-# Ingress configuration
+# Ingress configuration this are configured in hof-deploy and set to true
 ingress:
   externalEnabled: false
   internalEnabled: false
