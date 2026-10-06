@@ -7,9 +7,23 @@ RUN apk upgrade --no-cache
 # Upgrade npm from the base image and patch fixable bundled dependencies.
 # `http-cache-semantics` has no published fixed version and requires an exemption.
 RUN npm install -g npm@12.1.0 && \
-        npm install --prefix /usr/local/lib/node_modules/npm --no-save --package-lock=false --ignore-scripts \
+        mkdir -p /tmp/npm-patches \
+            /usr/local/lib/node_modules/npm/node_modules/brace-expansion \
+            /usr/local/lib/node_modules/npm/node_modules/undici && \
+        npm pack --pack-destination /tmp/npm-patches \
             brace-expansion@5.0.12 \
             undici@6.28.1 && \
+        rm -rf /usr/local/lib/node_modules/npm/node_modules/brace-expansion \
+            /usr/local/lib/node_modules/npm/node_modules/undici && \
+        mkdir -p /usr/local/lib/node_modules/npm/node_modules/brace-expansion \
+            /usr/local/lib/node_modules/npm/node_modules/undici && \
+        tar -xzf /tmp/npm-patches/brace-expansion-5.0.12.tgz \
+            --strip-components=1 \
+            -C /usr/local/lib/node_modules/npm/node_modules/brace-expansion && \
+        tar -xzf /tmp/npm-patches/undici-6.28.1.tgz \
+            --strip-components=1 \
+            -C /usr/local/lib/node_modules/npm/node_modules/undici && \
+        rm -rf /tmp/npm-patches && \
         npm --version
 
 # Setup nodejs group & nodejs user
