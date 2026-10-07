@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/UKHomeOffice/visa-processing-times-tool/",
   "resolutions": {
+    "http-cache-semantics": "^4.2.1",
     "ip-address": "10.3.1",
     "source-map-js": "1.2.2",
     "tar": "7.5.21",
