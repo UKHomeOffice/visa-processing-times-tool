@@ -41,6 +41,14 @@ RUN yarn install --frozen-lockfile --production && \
     yarn run postinstall \
     && yarn cache clean
 
+USER root
+
+# npm is only needed during image construction. Removing it also removes its
+# bundled http-cache-semantics package from the runtime image.
+RUN rm -rf /usr/local/lib/node_modules/npm
+
+USER 999
+
 HEALTHCHECK --interval=5m --timeout=3s \
  CMD curl --fail http://localhost:8080 || exit 1
 
