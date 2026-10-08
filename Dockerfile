@@ -1,4 +1,4 @@
-FROM quay.io/ukhomeofficedigital/hof-nodejs:d690c4de18477ad310889c272b448341fdc27f5c
+FROM quay.io/ukhomeofficedigital/hof-nodejs:24.21.0-alpine3.24-v8
 USER root
 
 # Update Alpine packages with latest security and bug fixes

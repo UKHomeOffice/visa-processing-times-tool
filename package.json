@@ -10,7 +10,7 @@
     "start": "node server.js",
     "start:dev": "hof-build watch --env",
     "build": "hof-build",
-    "postinstall": "hof-build",
+    "postinstall": "hof-build && node scripts/patch-hof-chokidar.js",
     "lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
     "test": "NODE_ENV=test yarn run test:lint && yarn run test:unit",
     "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/UKHomeOffice/visa-processing-times-tool/",
   "resolutions": {
+    "chokidar": "5.0.0",
     "http-cache-semantics": "^4.2.1",
     "ip-address": "10.3.1",
     "source-map-js": "1.2.2",
