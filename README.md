@@ -77,7 +77,7 @@ By following these steps, you should be able to run your application using a dev
 
 7. Run the necessary commands to install dependencies `yarn` and `yarn start:dev` to start your application.
 
-### Testing
+## Testing
 
 Tests are run using [Jest](https://jestjs.io/).
 

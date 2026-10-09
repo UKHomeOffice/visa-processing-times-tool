@@ -2,7 +2,7 @@
 
 A comprehensive Helm chart for deploying the VIPTT (Visa-Processing-Times-Tool) application on Kubernetes, including support for Redis caching, Nginx proxy, ingress, and network policies.
 
-## Overview
+### Overview
 
 This Helm chart packages the VIPTT application with all its components:
 - **Application Deployment**: Main VIPTT app with Nginx proxy sidecar
