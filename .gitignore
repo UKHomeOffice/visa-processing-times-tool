@@ -19,3 +19,8 @@ test/_accessibility/tmp/*
 .devcontainer/*.env
 .cache
 *.env
+
+# Playwright
+.features-gen/
+playwright-report/
+test-results/
