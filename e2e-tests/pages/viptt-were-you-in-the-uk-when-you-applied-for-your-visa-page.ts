@@ -9,7 +9,6 @@ export class vipttWereYouInTheUKWhenYouAppliedForYourVisaPage extends basePage {
     constructor(page: Page) {
         super(page);
         this.acceptCookies = page.locator("//button[contains(text(),'Accept additional cookies')]");
-        // Page renders two matching hide buttons (accept/reject banners); source clicked the first
         this.hideCookiesMessage = page.locator("//button[contains(text(),'Hide cookie message')]").first();
     }
 

@@ -1,4 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
+import { ConstantsLib as c } from '../utility-helper/constants-lib';
 
 export class basePage {
     readonly page: Page;
@@ -70,6 +71,31 @@ export class basePage {
 
     async selectRadioOrCheckBox(label: string) {
         await this.click(this.getRadioOrCheckBox(label));
+    }
+
+    async answerVisaPurpose(purpose: string) {
+        let label: string;
+        switch (purpose) {
+            case 'For work':
+                label = c.FOR_WORK_LABEL;
+                break;
+            case 'To study':
+                label = c.TO_STUDY_LABEL;
+                break;
+            case 'To get married':
+                label = c.TO_GET_MARRIED_LABEL;
+                break;
+            case 'To travel':
+                label = c.TO_TRAVEL_LABEL;
+                break;
+            case 'Bno':
+                label = c.BNO_LABEL;
+                break;
+            default:
+                label = c.SOMETHING_ELSE_LABEL;
+        }
+        await this.selectRadioOrCheckBox(label);
+        await this.clickContinueButton();
     }
 
     async answerYes() {
