@@ -3,7 +3,7 @@ import { ConstantsLib as c } from './constants-lib';
 export class BankHolidayService {
     private cachedHolidays?: Set<string>;
 
-    // Returns ISO dates (YYYY-MM-DD) for England and Wales bank holidays
+    // Returns ISO dates (dd-MM-yyyy) for England and Wales bank holidays
     async getUkBankHolidays(): Promise<Set<string>> {
         if (!this.cachedHolidays) {
             this.cachedHolidays = await this.loadUkBankHolidays();
