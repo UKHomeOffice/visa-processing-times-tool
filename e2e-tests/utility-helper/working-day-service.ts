@@ -28,7 +28,7 @@ export class BankHolidayService {
 export class WorkingDayService {
     constructor(private readonly bankHolidayService: BankHolidayService) {}
 
-    async minusWorkingDays(start: Date, workingDaysToSubtract: number): Promise<Date> {
+    async minusWorkingDays(start: Date, workingDaysToSubtract: number): Promise<string> {
         const bankHolidays = await this.bankHolidayService.getUkBankHolidays();
         const date = new Date(start);
         let remaining = workingDaysToSubtract;
@@ -41,7 +41,10 @@ export class WorkingDayService {
                 remaining--;
             }
         }
-        return date;
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = String(date.getFullYear()).padStart(4, '0');
+        return `${day}-${month}-${year}`;
     }
 
     private static toIsoDate(date: Date): string {

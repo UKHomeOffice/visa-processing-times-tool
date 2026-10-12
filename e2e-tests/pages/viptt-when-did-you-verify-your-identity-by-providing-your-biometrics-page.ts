@@ -45,8 +45,9 @@ export class vipttWhenDidYouVerifyYourIdentityByProvidingYourBiometricsPage exte
         await this.answerFixedDate(c.DATE_OUT_OF_SLA_SP);
     }
 
-    async enterBiometricsDate(date: Date) {
-        await this.enterDate(String(date.getDate()), String(date.getMonth() + 1), String(date.getFullYear()));
+    async enterBiometricsDate(date: string) {
+        const [day, month, year] = date.split('-');
+        await this.enterDate(day, month, year);
         await this.clickContinueButton();
     }
 

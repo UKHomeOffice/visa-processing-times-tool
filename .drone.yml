@@ -275,7 +275,7 @@ steps:
   # Run Playwright against the deployed pull-request branch environment
   - name: e2e_tests
     pull: if-not-exists
-    image: mcr.microsoft.com/playwright:v1.61.1-noble
+    image: mcr.microsoft.com/playwright:v1.64.0-noble
     volumes:
       - name: dockersock
         path: /root/.dockersock
@@ -604,7 +604,7 @@ steps:
 
   - name: cron_nightly_e2e_tests
     pull: if-not-exists
-    image: mcr.microsoft.com/playwright:v1.61.1-noble
+    image: mcr.microsoft.com/playwright:v1.64.0-noble
     environment:
       NIGHTLY_E2E_BASE_URL:
         from_secret: NIGHTLY_E2E_BASE_URL
