@@ -1,9 +1,6 @@
-FROM node:24.18.0-alpine3.24@sha256:4ba75f835bb8802193e4c114572113d4b26f95f6f094f4b5229d2a77773e0afc
+FROM node:24.22.2-alpine3.24@sha256:9279cf6e97dd0c1e0ea106153c2847a23a99bac3a588f7eb564d1f54eb3c92af
 
 USER root
-
-# Update Alpine packages with latest security and bug fixes
-RUN apk upgrade --no-cache
 
 # Setup nodejs group & nodejs user
 RUN addgroup --system nodejs --gid 998 && \

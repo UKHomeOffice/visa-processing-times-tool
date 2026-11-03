@@ -1,27 +1,39 @@
-FROM quay.io/ukhomeofficedigital/hof-nodejs:d690c4de18477ad310889c272b448341fdc27f5c
+# -----------------------------
+# Stage 1: Builder
+# -----------------------------
+FROM quay.io/ukhomeofficedigital/hof-nodejs:24.22.2_2-alpine@sha256:9279cf6e97dd0c1e0ea106153c2847a23a99bac3a588f7eb564d1f54eb3c92af AS builder
+
+USER root
+WORKDIR /app
+
+COPY . /app
+
+RUN yarn install --frozen-lockfile --production
+
+# -----------------------------
+# Stage 2: Runtime
+# -----------------------------
+FROM quay.io/ukhomeofficedigital/hof-nodejs:24.22.2_2-alpine@sha256:9279cf6e97dd0c1e0ea106153c2847a23a99bac3a588f7eb564d1f54eb3c92af
+
 USER root
 
 # Update Alpine packages with latest security and bug fixes
 RUN apk upgrade --no-cache
 
-# Upgrade npm from the base image to patch vulnerable bundled dependencies.
-# npm 12.1.0 bundles tar ^7.5.22 (CVE-2026-73566 is fixed in 7.5.21).
-RUN npm install -g npm@12.1.0 && npm --version
+# Upgrade npm from the base image to patch vulnerable bundled dependencies
+RUN npm install -g npm@12.0.1 && npm --version
 
 # Setup nodejs group & nodejs user
 RUN addgroup --system nodejs --gid 998 && \
     adduser --system nodejs --uid 999 --home /app/ && \
     chown -R 999:998 /app/
 
-USER 999
-
 WORKDIR /app
 
-COPY --chown=999:998 . /app
+COPY --from=builder --chown=999:998 /app/node_modules /app/node_modules
+COPY --from=builder --chown=999:998 /app/. /app
 
-RUN yarn install --frozen-lockfile --production && \
-    yarn run postinstall \
-    && yarn cache clean
+USER 999
 
 HEALTHCHECK --interval=5m --timeout=3s \
  CMD curl --fail http://localhost:8080 || exit 1
