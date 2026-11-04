@@ -17,12 +17,6 @@ FROM quay.io/ukhomeofficedigital/hof-nodejs:24.22.2_2-alpine@sha256:9279cf6e97dd
 
 USER root
 
-# Update Alpine packages with latest security and bug fixes
-RUN apk upgrade --no-cache
-
-# Upgrade npm from the base image to patch vulnerable bundled dependencies
-RUN npm install -g npm@12.0.1 && npm --version
-
 # Setup nodejs group & nodejs user
 RUN addgroup --system nodejs --gid 998 && \
     adduser --system nodejs --uid 999 --home /app/ && \

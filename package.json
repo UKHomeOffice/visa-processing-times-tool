@@ -30,7 +30,7 @@
     "ip-address": "10.3.1",
     "source-map-js": "1.2.2",
     "tar": "7.5.21",
-    "undici": "6.28.1"
+    "undici": "6.29.1"
   },
   "dependencies": {
     "accessible-autocomplete": "^3.0.2",
