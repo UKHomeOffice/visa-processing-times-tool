@@ -8,7 +8,7 @@ on:
         branches:
             - main
             - CCL-*
-  
+ 
 jobs:
     # Temporarily disabled actual VIPTT image jobs while CVE fixes are in progress.
     # TODO: Re-enable the real VIPTT image jobs once CVEs are remediated.
@@ -17,7 +17,7 @@ jobs:
         permissions:
             contents: read
             id-token: write
-        uses: Home-Office-Digital/core-cloud-workflow-docker-actions/.github/workflows/build-scan-push.yml@1.5.2
+        uses: Home-Office-Digital/core-cloud-workflow-docker-actions/.github/workflows/build-scan-push.yml@1.5.3
         with:
             working_directory: "."
             dockerfile: "Dockerfile"
@@ -35,7 +35,7 @@ jobs:
         permissions:
             contents: read
             id-token: write
-        uses: Home-Office-Digital/core-cloud-workflow-docker-actions/.github/workflows/build-scan-push.yml@1.5.2
+        uses: Home-Office-Digital/core-cloud-workflow-docker-actions/.github/workflows/build-scan-push.yml@1.5.3
         with:
             working_directory: "."
             dockerfile: "Dockerfile"
