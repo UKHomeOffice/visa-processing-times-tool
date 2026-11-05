@@ -33,7 +33,7 @@ on:
 
 jobs:
   validation:
-    uses: Home-Office-Digital/core-cloud-workflow-helm-ecr-actions/.github/workflows/validation.yml@1.0.0
+    uses: Home-Office-Digital/core-cloud-workflow-helm-ecr-actions/.github/workflows/validation.yml@312d0d28c0941f932c1ae9c5233aad8d9c4b2466 #1.1.2
     with:
       chart_directory: ${{ inputs.chart_directory || github.event.inputs.chart_directory || 'charts/viptt' }}
       helm_version: ${{ inputs.helm_version || github.event.inputs.helm_version || '' }}

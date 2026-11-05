@@ -10,8 +10,6 @@ Dockerfile
 docker-compose.yml
 .devcontainer
 .cache
-.drone.yml
-bin
 kube
 yarn-error.log
 .DS_Store
