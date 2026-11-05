@@ -10,7 +10,6 @@ Dockerfile
 docker-compose.yml
 .devcontainer
 .cache
-bin
 kube
 yarn-error.log
 .DS_Store
